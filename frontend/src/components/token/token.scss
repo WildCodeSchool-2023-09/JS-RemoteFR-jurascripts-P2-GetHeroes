@@ -1,0 +1,15 @@
+@import "../../assets/variables.scss";
+
+.contenairToken {
+  width: 6rem;
+  height: 2rem;
+  .token {
+    margin: 0;
+    color: $textColor;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    background: $backgroundText;
+    border: $borderBlue;
+    border-radius: 20px;
+  }
+}

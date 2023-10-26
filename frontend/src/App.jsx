@@ -1,39 +1,19 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
+import { useEffect, useState } from "react";
 import "./App.css";
+import Token from "./components/token/Token";
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
+  const [token, setToken] = useState(+localStorage.getItem("token") || 0);
+
+  useEffect(() => {
+    localStorage.setItem("token", token.toString());
+  }, [token]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
-
-        <Counter />
-
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+      <header>
+        <Token token={token} />
       </header>
     </div>
   );

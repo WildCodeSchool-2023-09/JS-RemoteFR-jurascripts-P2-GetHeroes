@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Token from "./components/token/Token";
+import BoutonPlay from "./components/bouton_play/BoutonPlay";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -15,6 +16,9 @@ function App() {
       <header>
         <Token token={token} />
       </header>
+      <main>
+        <BoutonPlay />
+      </main>
     </div>
   );
 }

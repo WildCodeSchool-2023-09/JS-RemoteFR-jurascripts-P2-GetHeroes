@@ -1,0 +1,17 @@
+<svg width="86" height="96" viewBox="0 0 86 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Play_game" filter="url(#filter0_d_9_16)">
+<path d="M12.3013 86.4064C10.9679 87.1762 9.30127 86.2139 9.30127 84.6743L9.30127 11.9282C9.30128 10.3886 10.9679 9.42636 12.3013 10.1962L75.3013 46.5692C76.6346 47.339 76.6346 49.2635 75.3013 50.0333L12.3013 86.4064Z" stroke="#1068B8" stroke-width="4" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_d_9_16" x="0.30127" y="0.922241" width="85" height="94.7581" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="3.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.407843 0 0 0 0 0.721569 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_16"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_16" result="shape"/>
+</filter>
+</defs>
+</svg>

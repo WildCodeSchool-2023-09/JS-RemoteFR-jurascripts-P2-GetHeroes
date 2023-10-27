@@ -1,0 +1,42 @@
+.footerTitle {
+  display: flex;
+  justify-content: center;
+}
+.bigContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.logoWild {
+  display: flex;
+  align-items: flex-end;
+  img {
+    width: 50%;
+    padding: 30px;
+  }
+}
+.footer {
+  font-family: "inter";
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 5px;
+
+  .nameComponent {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    flex-direction: column;
+  }
+  .logoComponent {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    align-items: end;
+  }
+  .reseau {
+    font-size: 2rem;
+  }
+  .container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

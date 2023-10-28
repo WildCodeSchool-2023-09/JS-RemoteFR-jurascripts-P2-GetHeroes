@@ -5,6 +5,10 @@
 .bigContainer {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
 }
 .logoWild {
   display: flex;
@@ -12,6 +16,9 @@
   img {
     width: 50%;
     padding: 30px;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 }
 .footer {
@@ -25,18 +32,39 @@
     justify-content: flex-end;
     list-style-type: none;
     flex-direction: column;
+    @media screen and (max-width: 767px) {
+      padding: 0;
+      margin: 0;
+      width: 130px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: stretch;
+    }
   }
   .logoComponent {
     display: flex;
     list-style-type: none;
     justify-content: flex-end;
     align-items: end;
+    @media screen and (max-width: 767px) {
+      padding: 0;
+      margin: 0;
+    }
   }
   .reseau {
     font-size: 2rem;
+    @media screen and (max-width: 767px) {
+      font-size: 1.5rem;
+    }
   }
   .container {
     display: flex;
     justify-content: flex-end;
+    @media screen and (max-width: 767px) {
+      height: 32px;
+      width: 100%;
+      justify-content: space-around;
+      font-size: 0.8rem;
+    }
   }
 }

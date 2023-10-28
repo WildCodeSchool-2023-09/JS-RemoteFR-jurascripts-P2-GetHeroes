@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import { Link, Outlet } from "react-router-dom";
 import "./App.css";
 import Token from "./components/token/Token";
@@ -8,16 +8,12 @@ import Titre from "./components/titre/Titre";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
-  const [token, setToken] = useState(+localStorage.getItem("token") || 0);
-  const [Afficher, setAfficher] = useState(true);
+  const [token, setToken] = useLocalStorage("token", 0);
+  const [Afficher, setAfficher] = useLocalStorage("Bouton-Play", true);
 
   const afficherOuNon = () => {
     setAfficher(!Afficher);
   };
-
-  useEffect(() => {
-    localStorage.setItem("token", token.toString());
-  }, [token]);
 
   return (
     <div className="App">

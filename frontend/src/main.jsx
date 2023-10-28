@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import PageDeJeux from "./components/page_de_jeux/PageDeJeux";
+import EnJeux from "./pages/EnJeux";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/jeux",
-        element: <PageDeJeux />,
+        element: <EnJeux />,
       },
     ],
   },

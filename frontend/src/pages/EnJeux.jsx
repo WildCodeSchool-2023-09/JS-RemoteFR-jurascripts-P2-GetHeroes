@@ -4,10 +4,16 @@ import Solution from "../components/page_de_jeux/solution/Solution";
 
 function EnJeux() {
   return (
-    <section className="contenairJeux">
-      <EnJeuxCarte />
-      <RevelationCarte />
-      <Solution />
+    <section className="contenairPageJeux">
+      <section className="contenairCarteJeux">
+        <EnJeuxCarte />
+      </section>
+      <section className="contenairRevelationCarte">
+        <RevelationCarte />
+      </section>
+      <section className="contenairSolution">
+        <Solution />
+      </section>
     </section>
   );
 }

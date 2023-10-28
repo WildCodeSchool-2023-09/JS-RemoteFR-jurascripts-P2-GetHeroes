@@ -9,10 +9,10 @@ import Titre from "./components/titre/Titre";
 function App() {
   // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useState(+localStorage.getItem("token") || 0);
-  const [playAfficher, setPlayAfficher] = useState(true);
+  const [Afficher, setAfficher] = useState(true);
 
-  const replacePlay = () => {
-    setPlayAfficher(!playAfficher);
+  const afficherOuNon = () => {
+    setAfficher(!Afficher);
   };
 
   useEffect(() => {
@@ -26,8 +26,8 @@ function App() {
       </header>
       <main>
         <Titre />
-        <Link to="/jeux" onClick={replacePlay}>
-          <BoutonPlay playAfficher={playAfficher} />
+        <Link to="/jeux" onClick={afficherOuNon}>
+          <BoutonPlay playAfficher={Afficher} />
         </Link>
         <Outlet />
         <BoutonPlay />

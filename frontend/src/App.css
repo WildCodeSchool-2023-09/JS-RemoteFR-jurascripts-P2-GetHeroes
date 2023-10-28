@@ -10,3 +10,26 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+header {
+  height: 45px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+main {
+  height: calc(100vh - 87px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main h1 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+footer {
+  height: 42px;
+}

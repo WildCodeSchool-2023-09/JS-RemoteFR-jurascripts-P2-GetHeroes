@@ -34,5 +34,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "react-icons": "^4.11.0"
   }
 }

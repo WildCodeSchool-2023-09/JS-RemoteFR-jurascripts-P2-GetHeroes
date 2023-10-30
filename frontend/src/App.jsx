@@ -4,6 +4,7 @@ import Token from "./components/token/Token";
 import BoutonPlay from "./components/bouton_play/BoutonPlay";
 import Footer from "./components/footer/Footer";
 import Titre from "./components/titre/Titre";
+import Newnav from "./components/Newnav";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <header>
+        <Newnav />
         <Token token={token} />
       </header>
       <main>

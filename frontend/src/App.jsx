@@ -9,10 +9,10 @@ import Titre from "./components/titre/Titre";
 function App() {
   // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useLocalStorage("token", 0);
-  const [Afficher, setAfficher] = useLocalStorage("Bouton-Play", true);
+  const [afficher, setAfficher] = useLocalStorage("Bouton-Play", true);
 
   const afficherOuNon = () => {
-    setAfficher(!Afficher);
+    setAfficher(!afficher);
   };
 
   return (
@@ -23,7 +23,7 @@ function App() {
       <main>
         <Titre />
         <Link to="/jeux" onClick={afficherOuNon}>
-          <BoutonPlay playAfficher={Afficher} />
+          <BoutonPlay playAfficher={afficher} />
         </Link>
         <Outlet />
         <BoutonPlay />

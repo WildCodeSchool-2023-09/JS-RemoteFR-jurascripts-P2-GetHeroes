@@ -1,4 +1,4 @@
-import { useLocalStorage } from "usehooks-ts";
+import { useLocalStorage, useSessionStorage } from "usehooks-ts";
 import { Link, Outlet } from "react-router-dom";
 import "./App.css";
 import Token from "./components/token/Token";
@@ -9,7 +9,7 @@ import Titre from "./components/titre/Titre";
 function App() {
   // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useLocalStorage("token", 0);
-  const [afficher, setAfficher] = useLocalStorage("Bouton-Play", true);
+  const [afficher, setAfficher] = useSessionStorage("Bouton-Play", true);
 
   const afficherOuNon = () => {
     setAfficher(!afficher);

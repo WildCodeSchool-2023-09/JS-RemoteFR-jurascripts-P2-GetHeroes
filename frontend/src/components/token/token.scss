@@ -1,9 +1,11 @@
 @import "../../assets/variables.scss";
 
 .contenairToken {
-  width: 6rem;
   height: 2rem;
+  display: inline-block;
+  position: absolute;
   .token {
+    font-size: 0.8rem;
     margin: 0;
     color: $textColor;
     font-weight: 700;

@@ -33,3 +33,7 @@ main h1 {
 footer {
   height: 42px;
 }
+
+.rien {
+  display: none;
+}

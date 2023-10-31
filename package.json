@@ -36,6 +36,7 @@
     "sass": "^1.69.5"
   },
   "dependencies": {
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "reactjs-scratchcard": "^1.0.6"
   }
 }

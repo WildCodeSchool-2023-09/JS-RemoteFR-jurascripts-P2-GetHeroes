@@ -1,5 +1,6 @@
 import EnJeuxCarte from "../../components/page_de_jeux/en_jeux_carte/EnJeuxCarte";
 import Solution from "../../components/page_de_jeux/solution/Solution";
+import "./enjeux.scss";
 
 function EnJeux() {
   return (

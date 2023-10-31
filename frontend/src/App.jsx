@@ -26,7 +26,6 @@ function App() {
           <BoutonPlay playAfficher={afficher} />
         </Link>
         <Outlet />
-        <BoutonPlay />
       </main>
       <footer>
         <Footer />

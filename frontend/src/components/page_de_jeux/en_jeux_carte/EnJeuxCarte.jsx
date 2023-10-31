@@ -7,7 +7,7 @@ function EnJeuxCarte() {
   const handleComplete = () => {
     // do some stuff here
   };
-  const heightRevelt = "18rem";
+  const heightRevelt = "18.5rem";
   const widthRevelt = "14rem";
   const fadeOut = true;
   return (

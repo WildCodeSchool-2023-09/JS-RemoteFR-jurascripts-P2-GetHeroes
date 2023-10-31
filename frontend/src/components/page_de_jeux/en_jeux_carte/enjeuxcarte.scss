@@ -1,8 +1,9 @@
-.contenairCarteJeux {
-  span {
-    img {
-      width: 14rem;
-      height: 18rem;
-    }
+@import "../../../assets/variables";
+
+span {
+  img {
+    border: $borderBlack;
+    width: 14rem;
+    height: 18rem;
   }
 }

@@ -12,9 +12,9 @@ function EnJeuxCarte() {
   const fadeOut = true;
   return (
     <ScratchCard
-      brushSize={20}
+      brushSize={5}
       fadeOutOnComplete={fadeOut}
-      finishPercent={90}
+      finishPercent={76}
       height={heightRevelt}
       image={ReveltCard}
       transitionProps={{ timeout: 200 }}

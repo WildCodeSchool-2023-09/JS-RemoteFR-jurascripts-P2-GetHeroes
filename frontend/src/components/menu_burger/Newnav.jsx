@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import PropTypes from "prop-types";
 
 import "./Newnav.scss";
 import { Link } from "react-router-dom";
 
-function Newnav() {
+function Newnav({ afficherOui, afficherNon }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const toggleMenu = () => {
@@ -17,19 +18,19 @@ function Newnav() {
         <ul className="navlinks">
           <li className="nav_items">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <Link to="/" className="nav_link">
+            <Link to="/" onClick={afficherOui} className="nav_link">
               Home
             </Link>
           </li>
           <li className="nav_items">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <Link to="/instruction" className="nav_link">
+            <Link to="/instruction" onClick={afficherNon} className="nav_link">
               Instructions
             </Link>
           </li>
           <li className="nav_items">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <Link to="/collection" onClick={() => {}} className="nav_link">
+            <Link to="/collection" onClick={afficherNon} className="nav_link">
               Collection
             </Link>
           </li>
@@ -43,5 +44,10 @@ function Newnav() {
     </div>
   );
 }
+
+Newnav.propTypes = {
+  afficherOui: PropTypes.func.isRequired,
+  afficherNon: PropTypes.func.isRequired,
+};
 
 export default Newnav;

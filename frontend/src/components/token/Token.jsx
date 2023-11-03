@@ -8,9 +8,7 @@ function Token({ token }) {
     </section>
   );
 }
-
 Token.propTypes = {
   token: PropTypes.number.isRequired,
 };
-
 export default Token;

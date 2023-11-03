@@ -12,19 +12,22 @@ function App() {
   const [token, setToken] = useLocalStorage("token", 0);
   const [afficher, setAfficher] = useSessionStorage("BoutonPlay", true);
 
-  const afficherOuNon = () => {
-    setAfficher(!afficher);
+  const afficherOui = () => {
+    setAfficher(true);
+  };
+  const afficherNon = () => {
+    setAfficher(false);
   };
 
   return (
     <div className="App">
       <header>
         <Token token={token} />
-        <Newnav />
+        <Newnav afficherOui={afficherOui} afficherNon={afficherNon} />
       </header>
       <main>
         <Titre />
-        <Link to="/jeux" onClick={afficherOuNon}>
+        <Link to="/jeux" onClick={afficherNon}>
           {afficher === true ? <BoutonPlay /> : <div className="rien"> </div>}
         </Link>
         <Outlet />

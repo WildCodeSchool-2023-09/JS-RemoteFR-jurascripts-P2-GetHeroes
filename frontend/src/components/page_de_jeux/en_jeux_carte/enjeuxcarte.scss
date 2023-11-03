@@ -1,7 +1,10 @@
 @import "../../../assets/variables";
 
-span {
+.contenairScratcard {
   img {
+    position: absolute;
+    z-index: 1;
+    bottom: 218px;
     border: $borderBlue;
     box-shadow: 0px 0px 4px 4px black;
     width: 14rem;

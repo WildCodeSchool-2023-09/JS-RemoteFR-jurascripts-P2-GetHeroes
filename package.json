@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "axios": "^1.6.0",
-    "react-icons": "^4.11.0",
-    "reactjs-scratchcard": "^1.0.6"
+    "react-icons": "^4.11.0"
   }
 }

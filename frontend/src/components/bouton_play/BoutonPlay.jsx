@@ -1,4 +1,3 @@
-import "./boutonPlay.scss";
 import imgPlay from "../../assets/images/Play_game.svg";
 
 function BoutonPlay() {

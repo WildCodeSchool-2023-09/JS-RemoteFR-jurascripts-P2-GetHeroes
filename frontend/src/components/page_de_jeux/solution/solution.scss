@@ -1,0 +1,26 @@
+@import "../../../assets/variables";
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .solutionText {
+    text-align: center;
+    margin: 1rem;
+    width: 70%;
+    padding: 0.2rem;
+    font-size: 19px;
+    border: $borderBlue;
+    background-color: $backgroundText;
+    color: $textColor;
+    border-radius: 28px;
+  }
+  button {
+    font-size: 15px;
+    padding: 5px 15px;
+    border: $borderBlue;
+    background-color: $backgroundText;
+    color: $textColor;
+    border-radius: 28px;
+  }
+}

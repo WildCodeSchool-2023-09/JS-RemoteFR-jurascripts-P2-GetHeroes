@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useLocalStorage, useSessionStorage } from "usehooks-ts";
+import { Link, Outlet } from "react-router-dom";
 import "./App.css";
-import { Outlet } from "react-router-dom";
 import Token from "./components/token/Token";
 import BoutonPlay from "./components/bouton_play/BoutonPlay";
 import Footer from "./components/footer/Footer";
@@ -9,21 +9,27 @@ import Newnav from "./components/menu_burger/Newnav";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
-  const [token, setToken] = useState(+localStorage.getItem("token") || 0);
+  const [token, setToken] = useLocalStorage("token", 0);
+  const [afficher, setAfficher] = useSessionStorage("BoutonPlay", true);
 
-  useEffect(() => {
-    localStorage.setItem("token", token.toString());
-  }, [token]);
+  const afficherOui = () => {
+    setAfficher(true);
+  };
+  const afficherNon = () => {
+    setAfficher(false);
+  };
 
   return (
     <div className="App">
       <header>
-        <Newnav />
         <Token token={token} />
+        <Newnav afficherOui={afficherOui} afficherNon={afficherNon} />
       </header>
       <main>
         <Titre />
-        <BoutonPlay />
+        <Link to="/jeux" onClick={afficherNon}>
+          {afficher === true ? <BoutonPlay /> : <div className="rien"> </div>}
+        </Link>
         <Outlet />
       </main>
       <footer>

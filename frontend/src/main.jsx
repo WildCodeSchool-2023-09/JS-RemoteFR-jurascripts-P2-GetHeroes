@@ -2,10 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import App from "./App";
-import EnJeux from "./pages/en_jeux/EnJeux";
 import Instruction from "./pages/instruction/Instruction";
+import EnJeux from "./pages/en_jeux/EnJeux";
 
 const router = createBrowserRouter([
   {

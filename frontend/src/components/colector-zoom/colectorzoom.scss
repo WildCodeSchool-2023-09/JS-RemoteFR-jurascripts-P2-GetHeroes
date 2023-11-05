@@ -1,1 +1,65 @@
-@import "../../assets/variables";
+@import "../../assets/variables.scss";
+
+.zoom-carte {
+  background-color: $backgroundOr;
+  text-align: center;
+  border: 4px solid #2c2c2c;
+  margin: 20px 20px;
+
+  .return-zoom {
+    height: 30px;
+    position: absolute;
+    top: 111px;
+    right: 0px;
+  }
+  .number-carte {
+    display: inline-block;
+    padding: 3px;
+    border: 2px solid #2c2c2c;
+    border-radius: 50% 50%;
+    background-color: $backgroundOr;
+    font-size: 0.6em;
+    position: absolute;
+    top: 145px;
+    right: 21px;
+  }
+  .img-hero-zoom {
+    width: 200px;
+    margin: 10px 10px 5px;
+    border: 4px solid #2c2c2c;
+    border-radius: 15px;
+  }
+  .desc {
+    display: inline-block;
+    padding: 3px 5px;
+    background-color: $backgroundOr;
+    width: 60px;
+    border: 2px solid #2c2c2c;
+    border-radius: 8px;
+  }
+  .height-zoom {
+    position: absolute;
+    bottom: 197px;
+    left: 38px;
+  }
+  .weight-zoom {
+    position: absolute;
+    bottom: 197px;
+    right: 38px;
+  }
+  p {
+    font-size: 0.8em;
+    line-height: 12px;
+    font-weight: 500;
+    margin: 5px;
+    text-align: center;
+  }
+  .big-name-zoom {
+    border: 2px solid #2c2c2c;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 0 0 20px;
+    line-height: 18px;
+  }
+}

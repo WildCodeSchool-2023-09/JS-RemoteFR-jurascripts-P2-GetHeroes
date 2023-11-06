@@ -37,3 +37,10 @@ footer {
 .rien {
   display: none;
 }
+.contenairLoader {
+  display: flex;
+  justify-content: center;
+}
+.loader {
+  margin: 100% auto;
+}

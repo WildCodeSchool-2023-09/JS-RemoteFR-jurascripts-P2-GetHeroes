@@ -17,21 +17,29 @@ function ColectorZoom() {
         width="230"
       />
       <p className="height-zoom desc">{apiHero[236]?.appearance.height[1]}</p>
-      <p className="weight-zoom desc">{apiHero[236]?.appearance.weight[1]}</p>
+      <p className="weight-zoom desc">
+        {apiHero[236]?.appearance.weight[1] === "0 kg"
+          ? "--- kg"
+          : apiHero[236]?.appearance.weight[1]}
+      </p>
       <h3 className="big-name-zoom">{apiHero[236]?.name}</h3>
       <p className="name-zoom">
-        My name is {apiHero[236]?.name} alias{" "}
-        {apiHero[236]?.biography.aliases[0]}.
+        Mon nom est {apiHero[236]?.name}
+        {apiHero[236]?.biography.aliases[0] === "-"
+          ? "."
+          : `alias ${apiHero[236]?.biography.aliases[0]}.`}
       </p>
       <p className="full-name-zoom">
-        My full name is {apiHero[236]?.biography["full-name"]}.
+        Je suis {apiHero[236]?.biography["full-name"]}.
       </p>
       <p className="race-zoom">
-        I am a {apiHero[236]?.appearance.race} breed born in{" "}
-        {apiHero[236]?.biography["place-of-birth"]}.
+        Je suis un {apiHero[236]?.appearance.race}
+        {apiHero[236]?.biography["place-of-birth"] === "-"
+          ? "."
+          : `né à ${apiHero[236]?.biography["place-of-birth"]}.`}
       </p>
       <p className="publisher-zoom">
-        My publisher is {apiHero[236]?.biography.publisher}.
+        Mon éditeur est {apiHero[236]?.biography.publisher}.
       </p>
     </section>
   );

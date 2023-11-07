@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ReveltCard from "../../../assets/images/ReveltCard.png";
 import ApiHeroes from "../../../data/ApiHeroes";
 import Rendomiser from "../../../util/Rendomiser";
@@ -6,8 +7,21 @@ import Solution from "../solution/Solution";
 import "./enjeuxcarte.scss";
 
 function EnJeuxCarte() {
-  const apiHero = ApiHeroes();
-  const rendomiserApi = Rendomiser(apiHero).slice(0, 1);
+  const [scratchedPercent, setScratchedPercent] = useState(0);
+
+  // Utilisez le hook ApiHeroes pour récupérer les données des héros
+  const { apidata, loading } = ApiHeroes();
+
+  // Gérez les états de chargement et d'erreur
+  if (loading) {
+    return <div>Chargement en cours...</div>;
+  }
+
+  const rendomiserApi = Rendomiser(apidata).slice(0, 1);
+
+  const handleScratchedPercentChange = (newPercent) => {
+    setScratchedPercent(newPercent);
+  };
 
   return (
     <>
@@ -17,8 +31,8 @@ function EnJeuxCarte() {
           height={288}
           image={ReveltCard}
           brushSize={5}
+          onScratchedPercentChange={handleScratchedPercentChange}
         />
-
         {rendomiserApi.map((hero, index) => (
           <div key={index.id}>
             <img src={hero.image.url} alt={hero.name} />
@@ -27,8 +41,10 @@ function EnJeuxCarte() {
       </section>
       <section className="contenairSolution">
         <Solution rendomiserApi={rendomiserApi} />
+        <p>{scratchedPercent.toFixed(2)}% scratched</p>
       </section>
     </>
   );
 }
+
 export default EnJeuxCarte;

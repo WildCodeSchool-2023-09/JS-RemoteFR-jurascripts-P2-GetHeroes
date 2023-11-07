@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Instruction from "./pages/instruction/Instruction";
 import EnJeux from "./pages/en_jeux/EnJeux";
+import ZoomCarte from "./pages/zoom_collection/ZoomCollection";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/instruction",
         element: <Instruction />,
+      },
+      {
+        path: "/zoom_collection",
+        element: <ZoomCarte />,
       },
     ],
   },

@@ -1,0 +1,15 @@
+.heroCard {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  filter: grey(5px);
+}
+.cardList {
+  border: 3px solid red;
+}
+.border {
+  border: 3px solid blue;
+}

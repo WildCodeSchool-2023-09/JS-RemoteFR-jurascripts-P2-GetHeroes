@@ -6,9 +6,9 @@ function Perdu({ clickRecomancer }) {
   return (
     <>
       <img className="pow" src={pow} alt="pow" />
-      <p className="perduP">Vous n'avais pas reussi a trouvé le bon héro !!</p>
+      <p className="perduP">Vous n'avez pas réussi à trouver le bon héro !!</p>
       <button className="boutonP" type="button" onClick={clickRecomancer}>
-        Recomancer
+        Recommencer
       </button>
     </>
   );

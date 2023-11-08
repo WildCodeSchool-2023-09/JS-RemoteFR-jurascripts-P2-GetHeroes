@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 import "./solution.scss";
 import { useContext } from "react";
 import TokenContext from "../../../contexts/TokenContext";
+import HeroesCollect from "../../../contexts/HeroesCollect";
 
 function Solution({ rendomiserApi, setEtatJeux }) {
+  const { heroesCollected, setHeroesCollected } = useContext(HeroesCollect);
   const { setToken, token } = useContext(TokenContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -12,6 +15,7 @@ function Solution({ rendomiserApi, setEtatJeux }) {
     if (heroValider === rendomiserApi[0].name) {
       setToken(token + 150);
       setEtatJeux("gagner");
+      setHeroesCollected([...heroesCollected, rendomiserApi[0].id]);
     } else {
       setToken(token - 10);
       setEtatJeux("perdu");

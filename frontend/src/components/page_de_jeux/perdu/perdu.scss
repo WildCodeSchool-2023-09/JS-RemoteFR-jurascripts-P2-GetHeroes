@@ -10,11 +10,14 @@
   background: $backgroundText;
   border: $borderBlue;
   border-radius: 15px;
+  padding: 3px;
 }
 .boutonP {
+  font-size: 1.2em;
   color: $textColor;
   background: $backgroundText;
   border: $borderBlue;
+  box-shadow: 0px 0px 6px 3px black;
   border-radius: 15px;
   padding: 3px 6px;
 }

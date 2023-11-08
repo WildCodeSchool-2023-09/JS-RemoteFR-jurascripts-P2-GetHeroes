@@ -21,6 +21,7 @@ function EnJeuxCarte() {
   }
 
   const rendomiserApi = Rendomiser(apidata).slice(0, 1);
+
   if (etatJeux === "jeux") {
     return (
       <section className="contenairCarteJeux">

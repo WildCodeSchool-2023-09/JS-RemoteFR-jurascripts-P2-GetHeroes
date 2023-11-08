@@ -1,4 +1,4 @@
-import InGameCard from "../../components/page_de_jeux/card-in-game/CardInGame";
+import InGameCard from "../../components/page-of-game/card-in-game/CardInGame";
 
 function InGame() {
   return (

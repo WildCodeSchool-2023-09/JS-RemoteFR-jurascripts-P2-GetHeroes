@@ -13,7 +13,6 @@ function Collection() {
   }
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -23,7 +22,6 @@ function Collection() {
   return (
     <section className="cardList">
       <Slider
-        dots={settings.dots}
         infinite={settings.infinite}
         speed={settings.speed}
         slidesToShow={settings.slidesToShow}

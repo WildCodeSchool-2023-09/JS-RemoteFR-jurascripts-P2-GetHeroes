@@ -1,5 +1,5 @@
 @import "../../../assets/variables";
-.contenairCarteJeux {
+.games-card-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -17,6 +17,9 @@
     }
   }
 }
-.perdu {
+.lose {
+  text-align: center;
+}
+.win {
   text-align: center;
 }

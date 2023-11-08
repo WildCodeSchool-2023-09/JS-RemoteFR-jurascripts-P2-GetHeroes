@@ -24,7 +24,7 @@ function EnJeuxCarte() {
 
   if (gameState === "game") {
     return (
-      <section className="contenairCarteJeux">
+      <section className="games-card-container">
         <section className="contenairScratcard">
           <ScratchCard
             width={224}

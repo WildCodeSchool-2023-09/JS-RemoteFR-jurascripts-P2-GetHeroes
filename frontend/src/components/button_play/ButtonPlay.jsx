@@ -1,6 +1,6 @@
 import imgPlay from "../../assets/pictures/Play_game.svg";
 
-function BoutonPlay() {
+function ButtonPlay() {
   return (
     <section className="btn-play">
       <img src={imgPlay} alt="Play" />
@@ -8,4 +8,4 @@ function BoutonPlay() {
   );
 }
 
-export default BoutonPlay;
+export default ButtonPlay;

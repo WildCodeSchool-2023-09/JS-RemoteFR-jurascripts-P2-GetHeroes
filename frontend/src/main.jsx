@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Instruction from "./pages/instruction/Instruction";
 import EnJeux from "./pages/en_jeux/EnJeux";
-import Collection from "./components/collection/Collection";
+import Colector from "./components/colector/Colector";
 import ZoomCarte from "./pages/zoom_collection/ZoomCollection";
 import Recompense from "./pages/recompense/Recompense";
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/collection",
-        element: <Collection />,
+        element: <Colector />,
       },
       {
         path: "/zoom_collection",

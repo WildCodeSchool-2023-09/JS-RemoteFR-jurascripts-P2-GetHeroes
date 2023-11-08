@@ -1,8 +1,8 @@
 import React from "react";
 import ApiHeroes from "../../data/ApiHeroes";
-import "./collection.scss";
+import "./colector.scss";
 
-function Collection() {
+function Colector() {
   const { apidata, loading } = ApiHeroes();
 
   if (loading) {
@@ -15,7 +15,7 @@ function Collection() {
         {apidata.map((hero) => (
           <div key={hero.id} className="card">
             <img
-              className="collection-image"
+              className="colector-picture"
               src={hero.image.url}
               alt={hero.name}
             />
@@ -27,4 +27,4 @@ function Collection() {
   );
 }
 
-export default Collection;
+export default Colector;

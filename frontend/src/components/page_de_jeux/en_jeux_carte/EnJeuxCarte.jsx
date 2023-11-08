@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ReveltCard from "../../../assets/images/ReveltCard.png";
+import ReveltCard from "../../../assets/pictures/ReveltCard.png";
 import ApiHeroes from "../../../data/ApiHeroes";
 import Rendomiser from "../../../util/Rendomiser";
 import ScratchCard from "../../../util/ScratchCard";

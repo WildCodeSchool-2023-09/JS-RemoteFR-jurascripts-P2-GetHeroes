@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import pow from "../../../assets/images/pow.png";
+import pow from "../../../assets/pictures/pow.png";
 import "./lose.scss";
 
 function Lose({ clickRecomancer }) {

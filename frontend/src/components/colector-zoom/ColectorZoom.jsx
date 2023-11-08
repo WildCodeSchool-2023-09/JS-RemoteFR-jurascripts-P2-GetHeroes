@@ -1,6 +1,6 @@
 import ApiHeroes from "../../data/ApiHeroes";
 import "./colectorzoom.scss";
-import SVG from "../../assets/images/delete.svg";
+import SVG from "../../assets/pictures/delete.svg";
 
 function ColectorZoom() {
   const { apidata, loading } = ApiHeroes();

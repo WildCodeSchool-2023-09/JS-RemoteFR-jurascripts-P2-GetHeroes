@@ -1,4 +1,4 @@
-import imgPlay from "../../assets/images/Play_game.svg";
+import imgPlay from "../../assets/pictures/Play_game.svg";
 
 function BoutonPlay() {
   return (

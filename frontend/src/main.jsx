@@ -7,6 +7,7 @@ import Instruction from "./pages/instruction/Instruction";
 import EnJeux from "./pages/en_jeux/EnJeux";
 import Collection from "./components/collection/Collection";
 import ZoomCarte from "./pages/zoom_collection/ZoomCollection";
+import Recompense from "./pages/recompense/Recompense";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/zoom_collection",
         element: <ZoomCarte />,
+      },
+      {
+        path: "/recompense",
+        element: <Recompense />,
       },
     ],
   },

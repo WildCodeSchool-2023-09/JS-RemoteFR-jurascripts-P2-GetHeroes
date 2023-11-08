@@ -43,7 +43,7 @@ function App() {
               {afficher === true ? (
                 <BoutonPlay />
               ) : (
-                <div className="rien"> </div>
+                <div className="Nothing"> </div>
               )}
             </Link>
             <Outlet />

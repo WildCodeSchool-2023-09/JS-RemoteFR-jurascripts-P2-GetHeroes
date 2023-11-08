@@ -30,7 +30,6 @@ function Newnav({ afficherOui, afficherNon }) {
             </Link>
           </li>
           <li className="nav_items">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <Link
               to="/instruction"
               onClick={() => {
@@ -43,7 +42,6 @@ function Newnav({ afficherOui, afficherNon }) {
             </Link>
           </li>
           <li className="nav_items">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <Link
               to="/collection"
               onClick={() => {

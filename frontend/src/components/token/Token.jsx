@@ -1,14 +1,15 @@
-import PropTypes from "prop-types";
 import "./token.scss";
+import { useContext } from "react";
+import TokenContext from "../../contexts/TokenContext";
 
-function Token({ token }) {
+function Token() {
+  const { token } = useContext(TokenContext);
+
   return (
     <section className="contenairToken">
       <p className="token">Token: {token}</p>
     </section>
   );
 }
-Token.propTypes = {
-  token: PropTypes.number.isRequired,
-};
+
 export default Token;

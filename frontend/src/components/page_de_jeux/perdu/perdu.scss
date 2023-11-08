@@ -1,0 +1,20 @@
+@import "../../../assets/variables";
+
+.pow {
+  width: 60vw;
+  height: 25vh;
+}
+.perduP {
+  width: 90vw;
+  color: $textColor;
+  background: $backgroundText;
+  border: $borderBlue;
+  border-radius: 15px;
+}
+.boutonP {
+  color: $textColor;
+  background: $backgroundText;
+  border: $borderBlue;
+  border-radius: 15px;
+  padding: 3px 6px;
+}

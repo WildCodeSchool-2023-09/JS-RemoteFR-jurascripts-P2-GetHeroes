@@ -1,7 +1,7 @@
 @import "../../assets/variables.scss";
 
 .zoom-carte {
-  background-color: $backgroundOr;
+  background-color: $backgroundGold;
   text-align: center;
   border: 4px solid #2c2c2c;
   margin: 20px 20px;
@@ -17,11 +17,11 @@
     padding: 3px;
     border: 2px solid #2c2c2c;
     border-radius: 50% 50%;
-    background-color: $backgroundOr;
+    background-color: $backgroundGold;
     font-size: 0.6em;
     position: absolute;
-    top: 145px;
-    right: 21px;
+    top: 140px;
+    right: 28px;
   }
   .img-hero-zoom {
     width: 200px;
@@ -32,22 +32,25 @@
   .desc {
     display: inline-block;
     padding: 3px 5px;
-    background-color: $backgroundOr;
+    background-color: $backgroundGold;
     width: 60px;
     border: 2px solid #2c2c2c;
     border-radius: 8px;
   }
   .height-zoom {
     position: absolute;
-    bottom: 197px;
-    left: 38px;
+    bottom: 186px;
+    left: 43px;
   }
   .weight-zoom {
     position: absolute;
-    bottom: 197px;
-    right: 38px;
+    bottom: 186px;
+    right: 43px;
   }
-  p {
+  .name-zoom,
+  .full-name-zoom,
+  .race-zoom,
+  .publisher-zoom {
     font-size: 0.8em;
     line-height: 12px;
     font-weight: 500;
@@ -59,7 +62,7 @@
     display: inline-block;
     border-radius: 5px;
     padding: 0 10px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     line-height: 18px;
   }
 }

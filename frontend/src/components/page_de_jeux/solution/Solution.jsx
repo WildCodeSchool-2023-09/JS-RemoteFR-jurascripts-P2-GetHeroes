@@ -14,11 +14,11 @@ function Solution({ rendomiserApi, setEtatJeux }) {
     const heroValider = formData.get("valider");
     if (heroValider === rendomiserApi[0].name) {
       setToken(token + 150);
-      setEtatJeux("gagner");
+      setEtatJeux("win");
       setHeroesCollected([...heroesCollected, rendomiserApi[0].id]);
     } else {
       setToken(token - 10);
-      setEtatJeux("perdu");
+      setEtatJeux("lose");
     }
   };
   return (

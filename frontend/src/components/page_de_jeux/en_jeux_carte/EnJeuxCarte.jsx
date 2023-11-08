@@ -5,15 +5,15 @@ import Rendomiser from "../../../util/Rendomiser";
 import ScratchCard from "../../../util/ScratchCard";
 import Solution from "../solution/Solution";
 import "./enjeuxcarte.scss";
-import Gagner from "../gagner/Gagner";
-import Perdu from "../perdu/Perdu";
+import Win from "../win/Win";
+import Lose from "../lose/Lose";
 
 function EnJeuxCarte() {
   // Utilisez le hook ApiHeroes pour récupérer les données des héros
   const { apidata, loading } = ApiHeroes();
-  const [etatJeux, setEtatJeux] = useState("jeux");
+  const [gameState, setGameState] = useState("game");
   const clickRecomancer = () => {
-    setEtatJeux("jeux");
+    setGameState("game");
   };
   // Gérez les états de chargement et d'erreur
   if (loading) {
@@ -22,7 +22,7 @@ function EnJeuxCarte() {
 
   const rendomiserApi = Rendomiser(apidata).slice(0, 1);
 
-  if (etatJeux === "jeux") {
+  if (gameState === "game") {
     return (
       <section className="contenairCarteJeux">
         <section className="contenairScratcard">
@@ -39,22 +39,22 @@ function EnJeuxCarte() {
           ))}
         </section>
         <section className="contenairSolution">
-          <Solution rendomiserApi={rendomiserApi} setEtatJeux={setEtatJeux} />
+          <Solution rendomiserApi={rendomiserApi} setEtatJeux={setGameState} />
         </section>
       </section>
     );
   }
-  if (etatJeux === "gagner") {
+  if (gameState === "win") {
     return (
-      <section className="gagner">
-        <Gagner clickRecomancer={clickRecomancer} />
+      <section className="win">
+        <Win clickRecomancer={clickRecomancer} />
       </section>
     );
   }
-  if (etatJeux === "perdu") {
+  if (gameState === "lose") {
     return (
-      <section className="perdu">
-        <Perdu clickRecomancer={clickRecomancer} />
+      <section className="lose">
+        <Lose clickRecomancer={clickRecomancer} />
       </section>
     );
   }

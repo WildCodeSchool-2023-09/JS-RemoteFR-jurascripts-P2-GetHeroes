@@ -1,19 +1,19 @@
 import PropTypes from "prop-types";
 import pow from "../../../assets/images/pow.png";
-import "./perdu.scss";
+import "./lose.scss";
 
-function Perdu({ clickRecomancer }) {
+function Lose({ clickRecomancer }) {
   return (
     <>
       <img className="pow" src={pow} alt="pow" />
-      <p className="perduP">Vous n'avez pas réussi à trouver le bon héro !!</p>
+      <p className="loseP">Vous n'avez pas réussi à trouver le bon héro !!</p>
       <button className="boutonP" type="button" onClick={clickRecomancer}>
         Recommencer
       </button>
     </>
   );
 }
-Perdu.propTypes = {
+Lose.propTypes = {
   clickRecomancer: PropTypes.func.isRequired,
 };
-export default Perdu;
+export default Lose;

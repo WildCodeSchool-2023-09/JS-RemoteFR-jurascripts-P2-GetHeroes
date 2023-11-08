@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Gagner({ clickRecomancer }) {
+function Win({ clickRecomancer }) {
   return (
     <>
       <img src="" alt="apiImage" />
@@ -10,7 +10,7 @@ function Gagner({ clickRecomancer }) {
     </>
   );
 }
-Gagner.propTypes = {
+Win.propTypes = {
   clickRecomancer: PropTypes.func.isRequired,
 };
-export default Gagner;
+export default Win;

@@ -3,10 +3,10 @@ import ReveltCard from "../../../assets/pictures/ReveltCard.png";
 import ApiHeroes from "../../../data/ApiHeroes";
 import Rendomiser from "../../../util/Rendomiser";
 import ScratchCard from "../../../util/ScratchCard";
-import Solution from "../solution/Solution";
 import "./cardingame.scss";
 import Win from "../win/Win";
 import Lose from "../lose/Lose";
+import Solution from "../solution/Solution";
 
 function CardInGame() {
   // Utilisez le hook ApiHeroes pour récupérer les données des héros
@@ -39,7 +39,7 @@ function CardInGame() {
           ))}
         </section>
         <section className="contenairSolution">
-          <Solution rendomiserApi={rendomiserApi} setEtatJeux={setGameState} />
+          <Solution rendomiserApi={rendomiserApi} setGameState={setGameState} />
         </section>
       </section>
     );

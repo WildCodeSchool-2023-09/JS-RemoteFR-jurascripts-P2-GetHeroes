@@ -20,8 +20,8 @@
     background-color: $backgroundOr;
     font-size: 0.6em;
     position: absolute;
-    top: 145px;
-    right: 21px;
+    top: 140px;
+    right: 28px;
   }
   .img-hero-zoom {
     width: 200px;
@@ -39,15 +39,18 @@
   }
   .height-zoom {
     position: absolute;
-    bottom: 197px;
-    left: 38px;
+    bottom: 186px;
+    left: 43px;
   }
   .weight-zoom {
     position: absolute;
-    bottom: 197px;
-    right: 38px;
+    bottom: 186px;
+    right: 43px;
   }
-  p {
+  .name-zoom,
+  .full-name-zoom,
+  .race-zoom,
+  .publisher-zoom {
     font-size: 0.8em;
     line-height: 12px;
     font-weight: 500;
@@ -59,7 +62,7 @@
     display: inline-block;
     border-radius: 5px;
     padding: 0 10px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     line-height: 18px;
   }
 }

@@ -27,16 +27,11 @@ main {
   justify-content: center;
 }
 
-main h1 {
-  margin: 0;
-  padding: 10px 0;
-}
-
 footer {
   height: 42px;
 }
 
-.rien {
+.Nothing {
   display: none;
 }
 .contenairLoader {

@@ -34,7 +34,11 @@ function App() {
         <main>
           <Titre />
           <Link to="/jeux" onClick={afficherNon}>
-            {afficher === true ? <BoutonPlay /> : <div className="rien"> </div>}
+            {afficher === true ? (
+              <BoutonPlay />
+            ) : (
+              <div className="Nothing"> </div>
+            )}
           </Link>
           <Outlet />
         </main>

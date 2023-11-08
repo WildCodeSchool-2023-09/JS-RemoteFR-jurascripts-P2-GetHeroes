@@ -1,0 +1,59 @@
+@import "../../assets/variables.scss";
+
+.zoom-reward {
+  background-color: $backgroundOr;
+  text-align: center;
+  border: 2px solid #2c2c2c;
+  margin: 20px 39px;
+}
+
+.img-hero-reward {
+  height: 250px;
+  width: 190px;
+  margin: 2px 2px 2px;
+  border: 2px solid #2c2c2c;
+  border-radius: 7px;
+}
+
+.desc {
+  display: inline-block;
+  padding: 1px 3px;
+  background-color: #c49d48;
+  width: 80px;
+  border: 1px solid #2c2c2c;
+  border-radius: 5px;
+}
+
+.height-reward {
+  position: absolute;
+  bottom: 193px;
+  left: 47px;
+}
+
+.weight-reward {
+  position: absolute;
+  bottom: 193px;
+  right: 47px;
+}
+
+.big-name-reward {
+  min-width: 100px;
+  border: 2px solid #2c2c2c;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0px 0 1px;
+  line-height: 18px;
+  font-size: 0.8em;
+}
+
+.name-reward,
+.full-name-reward,
+.race-reward,
+.publisher-reward {
+  font-size: 0.7em;
+  line-height: 9px;
+  font-weight: 500;
+  margin: 5px;
+  text-align: center;
+}

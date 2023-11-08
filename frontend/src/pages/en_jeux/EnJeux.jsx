@@ -4,8 +4,8 @@ import "./enjeux.scss";
 
 function EnJeux() {
   return (
-    <section className="contenairPageJeux">
-      <section className="contenairCarteJeux">
+    <section className="games-page-container">
+      <section className="games-card-container">
         <EnJeuxCarte />
       </section>
     </section>

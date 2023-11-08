@@ -6,7 +6,7 @@ function Token() {
   const { token } = useContext(TokenContext);
 
   return (
-    <section className="contenairToken">
+    <section className="container-token">
       <p className="token">Token: {token}</p>
     </section>
   );

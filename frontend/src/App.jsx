@@ -9,10 +9,9 @@ import BoutonPlay from "./components/bouton_play/BoutonPlay";
 import Footer from "./components/footer/Footer";
 import Titre from "./components/titre/Titre";
 import Newnav from "./components/menu_burger/Newnav";
-import TokenContext from "../contexts/TokenContext";
+import TokenContext from "./contexts/TokenContext";
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useLocalStorage("token", 0);
   const [afficher, setAfficher] = useSessionStorage("BoutonPlay", true);
   const theToken = useMemo(() => ({ token, setToken }), [token]);

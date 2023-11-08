@@ -1,31 +1,73 @@
-.cardList {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
+.card-list-container {
+  /* Hauteur maximale du conteneur avec défilement */
+  overflow: auto; /* Activer le défilement lorsque le contenu dépasse la hauteur maximale */
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 300px;
+}
 
-  .border {
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 150px; /* Largeur de chaque carte */
+  height: 80px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: black;
+}
+
+.collection-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-name {
+  font-size: 1.2em;
+  margin: 5px 0;
+  color: white;
+}
+
+@media screen and (max-width: 980px) {
+  .card-list-container {
+    height: 80%; /* Hauteur maximale du conteneur avec défilement */
+    /* Activer le défilement lorsque le contenu dépasse la hauteur maximale */
     border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px;
     padding: 10px;
-    text-align: center;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
+    width: 80%;
   }
-
-  .heroCard {
-    max-width: 100%;
-    height: auto;
+  .card-list {
+    display: flex;
+    flex-direction: column 1fr 1fr;
   }
+  .card {
+    width: 100px;
+  }
+  .hero-name {
+    font-size: 0.5rem;
+  }
+}
 
-  h2 {
-    margin-top: 10px;
-    font-size: 1.2em;
+@media screen and (max-width: 360px) {
+  .card-list-container {
+    height: 400px; /* Hauteur maximale du conteneur avec défilement */
+    /* Activer le défilement lorsque le contenu dépasse la hauteur maximale */
+    border: 1px solid #ccc;
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column 1fr 1fr;
+    height: 100%;
+  }
+  .card {
+    width: 50px;
+  }
+  .hero-name {
+    font-size: 0.5rem;
   }
 }

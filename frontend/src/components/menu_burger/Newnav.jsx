@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import "./Newnav.scss";
 import { Link } from "react-router-dom";
 
-function Newnav({ afficherOui, afficherNon }) {
+function Newnav({ displayYes, displayNo }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const toggleMenu = () => {
@@ -22,7 +22,7 @@ function Newnav({ afficherOui, afficherNon }) {
               to="/"
               onClick={() => {
                 toggleMenu();
-                afficherOui();
+                displayYes();
               }}
               className="nav_link"
             >
@@ -34,7 +34,7 @@ function Newnav({ afficherOui, afficherNon }) {
               to="/instruction"
               onClick={() => {
                 toggleMenu();
-                afficherNon();
+                displayNo();
               }}
               className="nav_link"
             >
@@ -43,10 +43,10 @@ function Newnav({ afficherOui, afficherNon }) {
           </li>
           <li className="nav_items">
             <Link
-              to="/collection"
+              to="/colector"
               onClick={() => {
                 toggleMenu();
-                afficherNon();
+                displayNo();
               }}
               className="nav_link"
             >
@@ -65,8 +65,8 @@ function Newnav({ afficherOui, afficherNon }) {
 }
 
 Newnav.propTypes = {
-  afficherOui: PropTypes.func.isRequired,
-  afficherNon: PropTypes.func.isRequired,
+  displayYes: PropTypes.func.isRequired,
+  displayNo: PropTypes.func.isRequired,
 };
 
 export default Newnav;

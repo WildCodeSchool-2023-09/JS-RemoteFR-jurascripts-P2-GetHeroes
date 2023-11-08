@@ -24,13 +24,13 @@ function Footer() {
             <li>Maxence</li>
           </ul>
           <ul className="logoComponent">
-            <li className="reseau">
+            <li className="network">
               <AiFillInstagram />
             </li>
-            <li className="reseau">
+            <li className="network">
               <AiFillFacebook />
             </li>
-            <li className="reseau">
+            <li className="network">
               <AiOutlineTwitter />
             </li>
           </ul>

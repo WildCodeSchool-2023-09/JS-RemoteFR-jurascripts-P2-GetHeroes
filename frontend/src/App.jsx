@@ -7,7 +7,7 @@ import { useMemo } from "react";
 import Token from "./components/token/Token";
 import ButtonPlay from "./components/button_play/ButtonPlay";
 import Footer from "./components/footer/Footer";
-import Titre from "./components/titre/Titre";
+import Title from "./components/title/Title";
 import Newnav from "./components/menu_burger/Newnav";
 import TokenContext from "./contexts/TokenContext";
 import HeroesCollect from "./contexts/HeroesCollect";
@@ -35,11 +35,11 @@ function App() {
         <div className="App">
           <header>
             <Token />
-            <Newnav displayyes={displayyes} displayno={displayno} />
+            <Newnav displayYes={displayyes} displayNo={displayno} />
           </header>
           <main>
-            <Titre />
-            <Link to="/jeux" onClick={displayno}>
+            <Title />
+            <Link to="/game" onClick={displayno}>
               {display === true ? (
                 <ButtonPlay />
               ) : (

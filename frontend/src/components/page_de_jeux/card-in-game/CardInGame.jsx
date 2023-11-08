@@ -4,15 +4,15 @@ import ApiHeroes from "../../../data/ApiHeroes";
 import Rendomiser from "../../../util/Rendomiser";
 import ScratchCard from "../../../util/ScratchCard";
 import Solution from "../solution/Solution";
-import "./enjeuxcarte.scss";
+import "./cardingame.scss";
 import Win from "../win/Win";
 import Lose from "../lose/Lose";
 
-function EnJeuxCarte() {
+function CardInGame() {
   // Utilisez le hook ApiHeroes pour récupérer les données des héros
   const { apidata, loading } = ApiHeroes();
   const [gameState, setGameState] = useState("game");
-  const clickRecomancer = () => {
+  const clickRestart = () => {
     setGameState("game");
   };
   // Gérez les états de chargement et d'erreur
@@ -47,17 +47,17 @@ function EnJeuxCarte() {
   if (gameState === "win") {
     return (
       <section className="win">
-        <Win clickRecomancer={clickRecomancer} />
+        <Win clickRestart={clickRestart} />
       </section>
     );
   }
   if (gameState === "lose") {
     return (
       <section className="lose">
-        <Lose clickRecomancer={clickRecomancer} />
+        <Lose clickRestart={clickRestart} />
       </section>
     );
   }
 }
 
-export default EnJeuxCarte;
+export default CardInGame;

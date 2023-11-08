@@ -1,6 +1,6 @@
 import ColectorZoom from "../../components/colector-zoom/ColectorZoom";
 
-function ZoomCarte() {
+function ZoomCard() {
   return (
     <section className="zoom_colector">
       <ColectorZoom />
@@ -8,4 +8,4 @@ function ZoomCarte() {
   );
 }
 
-export default ZoomCarte;
+export default ZoomCard;

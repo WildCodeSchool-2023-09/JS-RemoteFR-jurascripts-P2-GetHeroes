@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 
-function Win({ clickRecomancer }) {
+function Win({ clickRestart }) {
   return (
     <>
-      <img src="" alt="apiImage" />
-      <button type="button" onClick={clickRecomancer}>
+      <img src="" alt="api_picture" />
+      <button type="button" onClick={clickRestart}>
         Continuer
       </button>
     </>
   );
 }
 Win.propTypes = {
-  clickRecomancer: PropTypes.func.isRequired,
+  clickRestart: PropTypes.func.isRequired,
 };
 export default Win;

@@ -1,7 +1,7 @@
 @import "../../assets/variables.scss";
 
 .zoom-carte {
-  background-color: $backgroundOr;
+  background-color: $backgroundGold;
   text-align: center;
   border: 4px solid #2c2c2c;
   margin: 20px 20px;
@@ -17,7 +17,7 @@
     padding: 3px;
     border: 2px solid #2c2c2c;
     border-radius: 50% 50%;
-    background-color: $backgroundOr;
+    background-color: $backgroundGold;
     font-size: 0.6em;
     position: absolute;
     top: 140px;
@@ -32,7 +32,7 @@
   .desc {
     display: inline-block;
     padding: 3px 5px;
-    background-color: $backgroundOr;
+    background-color: $backgroundGold;
     width: 60px;
     border: 2px solid #2c2c2c;
     border-radius: 8px;

@@ -24,17 +24,18 @@
   width: 80px;
   border: 1px solid #2c2c2c;
   border-radius: 5px;
+  margin: 0;
 }
 
 .height-reward {
   position: absolute;
-  bottom: 193px;
+  bottom: 225px;
   left: 47px;
 }
 
 .weight-reward {
   position: absolute;
-  bottom: 193px;
+  bottom: 225px;
   right: 47px;
 }
 
@@ -58,4 +59,23 @@
   font-weight: 500;
   margin: 5px;
   text-align: center;
+}
+.reward-restart {
+  font-size: 1em;
+  color: $textColor;
+  border: $borderBlue;
+  border-radius: 8px;
+  background-color: $backgroundText;
+  box-shadow: 10px 14px 8px -7px #2c2c2c;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.5s both;
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
 }

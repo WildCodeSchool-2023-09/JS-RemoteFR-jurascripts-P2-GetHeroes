@@ -1,6 +1,6 @@
 import ApiHeroes from "../../data/ApiHeroes";
 import "./colectorzoom.scss";
-import SVG from "../../assets/images/delete.svg";
+import SVG from "../../assets/pictures/delete.svg";
 
 function ColectorZoom() {
   const { apidata, loading } = ApiHeroes();
@@ -8,9 +8,9 @@ function ColectorZoom() {
     return <div>Chargement en cours...</div>;
   }
   return (
-    <section className="zoom-carte">
+    <section className="zoom-card">
       <img className="return-zoom" src={SVG} alt="Play" />
-      <p className="number-carte">237/481</p>
+      <p className="number-card">237/481</p>
       <img
         className="img-hero-zoom"
         src={apidata[236].image.url}

@@ -1,7 +1,7 @@
 import ApiHeroes from "../../data/ApiHeroes";
-import "./recompense.scss";
+import "./reward.scss";
 
-function Recompense() {
+function Reward() {
   const { apidata, loading } = ApiHeroes();
   if (loading) {
     return <div>Chargement en cours...</div>;
@@ -44,4 +44,4 @@ function Recompense() {
   );
 }
 
-export default Recompense;
+export default Reward;

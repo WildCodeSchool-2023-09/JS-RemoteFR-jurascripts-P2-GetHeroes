@@ -4,10 +4,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Instruction from "./pages/instruction/Instruction";
-import EnJeux from "./pages/en_jeux/EnJeux";
-import Collection from "./components/collection/Collection";
-import ZoomCarte from "./pages/zoom_collection/ZoomCollection";
-import Recompense from "./pages/recompense/Recompense";
+import InGame from "./pages/in-game/InGame";
+import Colector from "./components/colector/Colector";
+import ZoomCard from "./pages/zoom_colector/ZoomColector";
+import Reward from "./pages/reward/Reward";
 
 const router = createBrowserRouter([
   {
@@ -15,24 +15,24 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/jeux",
-        element: <EnJeux />,
+        path: "/game",
+        element: <InGame />,
       },
       {
         path: "/instruction",
         element: <Instruction />,
       },
       {
-        path: "/collection",
-        element: <Collection />,
+        path: "/colector",
+        element: <Colector />,
       },
       {
-        path: "/zoom_collection",
-        element: <ZoomCarte />,
+        path: "/zoom_colector",
+        element: <ZoomCard />,
       },
       {
-        path: "/recompense",
-        element: <Recompense />,
+        path: "/reward",
+        element: <Reward />,
       },
     ],
   },

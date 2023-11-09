@@ -1,0 +1,24 @@
+@import "../../assets/variables";
+
+.big-title {
+  color: $textColor;
+  font-size: 40px;
+  text-shadow: 3px 3px 1px #4b3820;
+  margin: 0;
+  padding: 10px 0;
+  animation: big-title 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  @keyframes big-title {
+    0% {
+      letter-spacing: 1em;
+      transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+}

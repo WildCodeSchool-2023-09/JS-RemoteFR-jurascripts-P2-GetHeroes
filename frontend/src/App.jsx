@@ -5,16 +5,16 @@ import "./App.css";
 
 import { useMemo } from "react";
 import Token from "./components/token/Token";
-import BoutonPlay from "./components/bouton_play/BoutonPlay";
+import ButtonPlay from "./components/button_play/ButtonPlay";
 import Footer from "./components/footer/Footer";
-import Titre from "./components/titre/Titre";
+import Title from "./components/title/Title";
 import Newnav from "./components/menu_burger/Newnav";
 import TokenContext from "./contexts/TokenContext";
 import HeroesCollect from "./contexts/HeroesCollect";
 
 function App() {
   const [token, setToken] = useLocalStorage("token", 0);
-  const [afficher, setAfficher] = useSessionStorage("BoutonPlay", true);
+  const [display, setDisplay] = useSessionStorage("ButtonPlay", true);
   const [heroesCollected, setHeroesCollected] = useLocalStorage("Héros Id", []);
   const theToken = useMemo(() => ({ token, setToken }), [token]);
   const theHeroes = useMemo(
@@ -22,11 +22,11 @@ function App() {
     [heroesCollected]
   );
 
-  const afficherOui = () => {
-    setAfficher(true);
+  const displayyes = () => {
+    setDisplay(true);
   };
-  const afficherNon = () => {
-    setAfficher(false);
+  const displayno = () => {
+    setDisplay(false);
   };
 
   return (
@@ -35,13 +35,13 @@ function App() {
         <div className="App">
           <header>
             <Token />
-            <Newnav afficherOui={afficherOui} afficherNon={afficherNon} />
+            <Newnav displayYes={displayyes} displayNo={displayno} />
           </header>
           <main>
-            <Titre />
-            <Link to="/jeux" onClick={afficherNon}>
-              {afficher === true ? (
-                <BoutonPlay />
+            <Title />
+            <Link to="/game" onClick={displayno}>
+              {display === true ? (
+                <ButtonPlay />
               ) : (
                 <div className="Nothing"> </div>
               )}

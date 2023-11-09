@@ -4,9 +4,9 @@ import ApiHeroes from "../../../data/ApiHeroes";
 import Rendomiser from "../../../util/Rendomiser";
 import ScratchCard from "../../../util/ScratchCard";
 import "./cardingame.scss";
-import Win from "../win/Win";
 import Lose from "../lose/Lose";
 import Solution from "../solution/Solution";
+import Reward from "../../../pages/reward/Reward";
 
 function CardInGame() {
   // Utilisez le hook ApiHeroes pour récupérer les données des héros
@@ -47,7 +47,7 @@ function CardInGame() {
   if (gameState === "win") {
     return (
       <section className="win">
-        <Win clickRestart={clickRestart} />
+        <Reward clickRestart={clickRestart} rendomiserApi={rendomiserApi} />
       </section>
     );
   }

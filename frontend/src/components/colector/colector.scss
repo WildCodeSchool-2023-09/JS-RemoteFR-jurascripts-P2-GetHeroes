@@ -74,6 +74,17 @@
   margin: 5px 0;
   color: white;
 }
+.notFoundCard {
+  width: 150px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-image: url("../../assets/pictures/ReveltCard.png");
+  border-radius: 0.3rem;
+  background-position: center;
+  background-size: cover;
+}
 
 @media screen and (max-width: 980px) {
   .card-list-container {
@@ -88,7 +99,8 @@
     flex-direction: column 1fr 1fr;
   }
 
-  .card {
+  .card,
+  .notFoundCard {
     width: 100px;
   }
   .hero-name {
@@ -105,7 +117,8 @@
     flex-direction: column 1fr 1fr;
     height: 100%;
   }
-  .card {
+  .card,
+  .notFoundCard {
     width: 50px;
   }
   .hero-name {

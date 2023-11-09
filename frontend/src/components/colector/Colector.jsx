@@ -1,27 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ApiHeroes from "../../data/ApiHeroes";
 import "./colector.scss";
 
 function Colector() {
   const { apidata, loading } = ApiHeroes();
+  const chunkSize = 40;
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [chunkedData, setChunkedData] = useState([]);
+
+  useEffect(() => {
+    // Diviser les cartes en sous-tableaux de 10 cartes chacun
+    const newData = [];
+    for (let i = 0; i < apidata.length; i += chunkSize) {
+      newData.push(apidata.slice(i, i + chunkSize));
+    }
+    setChunkedData(newData);
+  }, [apidata]);
 
   if (loading) {
     return <div>Chargement en cours...</div>;
   }
+  const totalPages = chunkedData.length;
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide < chunkedData.length - 1 ? prevSlide + 1 : prevSlide
+    );
+  };
+
+  const previousSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : prevSlide));
+  };
 
   return (
     <div className="card-list-container">
+      <div className="page-indicator">{`Page ${
+        currentSlide + 1
+      }/${totalPages}`}</div>
+      <div className="slider-navigation">
+        <button
+          type="button"
+          onClick={previousSlide}
+          disabled={currentSlide === 0}
+        >
+          Précédent
+        </button>
+
+        <button
+          type="button"
+          onClick={nextSlide}
+          disabled={currentSlide === chunkedData.length - 1}
+        >
+          Suivant
+        </button>
+      </div>
       <div className="card-list">
-        {apidata.map((hero) => (
-          <div key={hero.id} className="card">
-            <img
-              className="colector-picture"
-              src={hero.image.url}
-              alt={hero.name}
-            />
-            <h3 className="hero-name">{hero.name}</h3>
-          </div>
-        ))}
+        {chunkedData[currentSlide] &&
+          chunkedData[currentSlide].map((hero) => (
+            <div key={hero.id} className="card">
+              <img
+                className="colector-picture"
+                src={hero.image.url}
+                alt={hero.name}
+              />
+              <h3 className="hero-name">{hero.name}</h3>
+            </div>
+          ))}
       </div>
     </div>
   );

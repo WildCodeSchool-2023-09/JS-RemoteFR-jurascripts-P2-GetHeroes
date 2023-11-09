@@ -21,7 +21,7 @@ function Instruction() {
         grâce aux Tokens.
       </p>
       <p className="last">
-        Bonne partie et trouver le héros que vous appréciez le plus.
+        Bonne partie et trouvez le héros que vous appréciez le plus.
       </p>
     </section>
   );

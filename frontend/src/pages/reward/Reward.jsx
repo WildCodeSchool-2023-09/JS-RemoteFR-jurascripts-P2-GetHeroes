@@ -1,47 +1,66 @@
-import ApiHeroes from "../../data/ApiHeroes";
+import PropTypes from "prop-types";
 import "./reward.scss";
 
-function Reward() {
-  const { apidata, loading } = ApiHeroes();
-  if (loading) {
-    return <div>Chargement en cours...</div>;
-  }
+function Reward({ rendomiserApi, clickRestart }) {
   return (
     <section className="zoom-reward">
       <img
         className="img-hero-reward"
-        src={apidata[236].image.url}
-        alt={apidata[236].name}
+        src={rendomiserApi[0].image.url}
+        alt={rendomiserApi[0].name}
         height="294"
         width="230"
       />
-      <p className="height-reward desc">{apidata[236].appearance.height[1]}</p>
-      <p className="weight-reward desc">
-        {apidata[236].appearance.weight[1] === "0 kg"
-          ? "--- kg"
-          : apidata[236].appearance.weight[1]}
+      <p className="height-reward desc">
+        {rendomiserApi[0].appearance.height[1]}
       </p>
-      <h3 className="big-name-reward">{apidata[236].name}</h3>
+      <p className="weight-reward desc">
+        {rendomiserApi[0].appearance.weight[1] === "0 kg"
+          ? "--- kg"
+          : rendomiserApi[0].appearance.weight[1]}
+      </p>
+      <h3 className="big-name-reward">{rendomiserApi[0].name}</h3>
       <p className="name-reward">
-        Mon nom est {apidata[236].name}
-        {apidata[236].biography.aliases[0] === "-"
+        Mon nom est {rendomiserApi[0].name}
+        {rendomiserApi[0].biography.aliases[0] === "-"
           ? "."
-          : `alias ${apidata[236].biography.aliases[0]}.`}
+          : `alias ${rendomiserApi[0].biography.aliases[0]}.`}
       </p>
       <p className="full-name-reward">
-        Je suis {apidata[236].biography["full-name"]}.
+        Je suis {rendomiserApi[0].biography["full-name"]}.
       </p>
       <p className="race-reward">
-        Je suis un {apidata[236].appearance.race}
-        {apidata[236].biography["place-of-birth"] === "-"
+        Je suis un {rendomiserApi[0].appearance.race}
+        {rendomiserApi[0].biography["place-of-birth"] === "-"
           ? "."
-          : `né à ${apidata[236].biography["place-of-birth"]}.`}
+          : `né à ${rendomiserApi[0].biography["place-of-birth"]}.`}
       </p>
       <p className="publisher-reward">
-        Mon éditeur est {apidata[236].biography.publisher}.
+        Mon éditeur est {rendomiserApi[0].biography.publisher}.
       </p>
+      <button type="button" onClick={clickRestart}>
+        Continuer
+      </button>
     </section>
   );
 }
+Reward.propTypes = {
+  rendomiserApi: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    biography: PropTypes.shape({
+      publisher: PropTypes.string.isRequired,
+      aliases: PropTypes.string.isRequired,
+    }).isRequired,
+    appearance: PropTypes.shape({
+      race: PropTypes.string.isRequired,
+      weight: PropTypes.string.isRequired,
+      height: PropTypes.string.isRequired,
+    }).isRequired,
+    image: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  clickRestart: PropTypes.func.isRequired,
+};
 
 export default Reward;

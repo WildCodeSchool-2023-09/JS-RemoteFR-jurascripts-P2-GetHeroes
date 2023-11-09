@@ -9,18 +9,22 @@ import Solution from "../solution/Solution";
 import Reward from "../../../pages/reward/Reward";
 
 function CardInGame() {
-  // Utilisez le hook ApiHeroes pour récupérer les données des héros
   const { apidata, loading } = ApiHeroes();
   const [gameState, setGameState] = useState("game");
+  const [currentHero, setCurrentHero] = useState(null);
+
   const clickRestart = () => {
     setGameState("game");
+    setCurrentHero(Rendomiser(apidata).slice(0, 1)[0]);
   };
-  // Gérez les états de chargement et d'erreur
+
   if (loading) {
     return <div>Chargement en cours...</div>;
   }
 
-  const rendomiserApi = Rendomiser(apidata).slice(0, 1);
+  if (!currentHero) {
+    setCurrentHero(Rendomiser(apidata).slice(0, 1)[0]);
+  }
 
   if (gameState === "game") {
     return (
@@ -32,25 +36,27 @@ function CardInGame() {
             image={ReveltCard}
             brushSize={5}
           />
-          {rendomiserApi.map((hero, index) => (
-            <div key={index.id}>
-              <img src={hero.image.url} alt={hero.name} />
+          {currentHero && (
+            <div>
+              <img src={currentHero.image.url} alt={currentHero.name} />
             </div>
-          ))}
+          )}
         </section>
         <section className="contenairSolution">
-          <Solution rendomiserApi={rendomiserApi} setGameState={setGameState} />
+          <Solution rendomiserApi={currentHero} setGameState={setGameState} />
         </section>
       </section>
     );
   }
+
   if (gameState === "win") {
     return (
       <section className="win">
-        <Reward clickRestart={clickRestart} rendomiserApi={rendomiserApi} />
+        <Reward clickRestart={clickRestart} rendomiserApi={currentHero} />
       </section>
     );
   }
+
   if (gameState === "lose") {
     return (
       <section className="lose">

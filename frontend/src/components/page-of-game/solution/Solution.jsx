@@ -12,7 +12,7 @@ function Solution({ rendomiserApi, setGameState }) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const heroValider = formData.get("valider");
-    if (heroValider === rendomiserApi[0].name) {
+    if (heroValider.toLowerCase() === rendomiserApi.name.toLowerCase()) {
       setToken(token + 150);
       setGameState("win");
       setHeroesCollected([...heroesCollected, rendomiserApi[0].id]);

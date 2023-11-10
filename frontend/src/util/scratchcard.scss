@@ -1,0 +1,11 @@
+@import "../../src/assets/variables";
+
+div {
+  canvas {
+    position: relative;
+    z-index: 2;
+    width: 14em;
+    height: 18rem;
+    border: $borderBlue;
+  }
+}

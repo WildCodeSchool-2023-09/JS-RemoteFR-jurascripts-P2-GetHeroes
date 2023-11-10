@@ -1,0 +1,81 @@
+@import "../../assets/variables.scss";
+
+.zoom-reward {
+  background-color: $backgroundGold;
+  text-align: center;
+  border: 2px solid #2c2c2c;
+  border-radius: 7px;
+  box-shadow: 10px 14px 8px -7px #2c2c2c;
+  margin: 20px 39px;
+}
+
+.img-hero-reward {
+  height: 250px;
+  width: 190px;
+  margin: 2px 2px 2px;
+  border: 2px solid #2c2c2c;
+  border-radius: 7px;
+}
+
+.desc {
+  display: inline-block;
+  padding: 1px 3px;
+  background-color: $backgroundGold;
+  width: 80px;
+  border: 1px solid #2c2c2c;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.height-reward {
+  position: absolute;
+  bottom: 225px;
+  left: 47px;
+}
+
+.weight-reward {
+  position: absolute;
+  bottom: 225px;
+  right: 47px;
+}
+
+.big-name-reward {
+  min-width: 100px;
+  border: 2px solid #2c2c2c;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0px 0 1px;
+  line-height: 18px;
+  font-size: 0.8em;
+}
+
+.name-reward,
+.full-name-reward,
+.race-reward,
+.publisher-reward {
+  font-size: 0.7em;
+  line-height: 9px;
+  font-weight: 500;
+  margin: 5px;
+  text-align: center;
+}
+.reward-restart {
+  font-size: 1em;
+  color: $textColor;
+  border: $borderBlue;
+  border-radius: 8px;
+  background-color: $backgroundText;
+  box-shadow: 10px 14px 8px -7px #2c2c2c;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.5s both;
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.card-list-container {
+  overflow: auto;
+
+  padding: 10px;
+  height: 300px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.slider-navigation {
+  position: absolute;
+  bottom: 2.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between; /* Pour espacer les boutons */
+  width: 200px; /* Ajustez la largeur totale des boutons selon vos besoins */
+}
+
+.slider-navigation button {
+  background-color: #e62429; /* Rouge vif - couleur Marvel */
+  border: none;
+  color: white;
+  padding: 8px 12px; /* Ajoutez du rembourrage pour un aspect plus agréable */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 3px; /* Ajoutez des bords arrondis */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition de couleur de fond */
+}
+
+.slider-navigation button:disabled {
+  background-color: #ccc; /* Gris pour les boutons désactivés */
+  cursor: not-allowed;
+}
+
+.slider-navigation button:not(:disabled):hover {
+  background-color: #d81d25; /* Rouge légèrement plus foncé au survol uniquement pour les boutons non désactivés */
+}
+.page-indicator {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  color: white;
+  z-index: 1; /* Assurez-vous que le numéro de page est au-dessus du reste du contenu */
+  font-weight: bold; /* Rendez le texte en gras */
+}
+
+.card {
+  width: 150px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: black;
+  border-radius: 0.3rem;
+}
+
+.colector-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-name {
+  font-size: 1.2em;
+  margin: 5px 0;
+  color: white;
+}
+.notFoundCard {
+  width: 150px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-image: url("../../assets/pictures/ReveltCard.png");
+  border-radius: 0.3rem;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 980px) {
+  .card-list-container {
+    height: 80%; /* Hauteur maximale du conteneur avec défilement */
+    /* Activer le défilement lorsque le contenu dépasse la hauteur maximale */
+
+    padding: 10px;
+    width: 80%;
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column 1fr 1fr;
+  }
+
+  .card,
+  .notFoundCard {
+    width: 100px;
+  }
+  .hero-name {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .card-list-container {
+    height: 400px;
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column 1fr 1fr;
+    height: 100%;
+  }
+  .card,
+  .notFoundCard {
+    width: 50px;
+  }
+  .hero-name {
+    font-size: 0.5rem;
+  }
+}

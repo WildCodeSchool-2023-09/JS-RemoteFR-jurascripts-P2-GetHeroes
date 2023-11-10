@@ -15,7 +15,7 @@ import HeroesCollect from "./contexts/HeroesCollect";
 function App() {
   const [token, setToken] = useLocalStorage("token", 0);
   const [display, setDisplay] = useSessionStorage("ButtonPlay", true);
-  const [heroesCollected, setHeroesCollected] = useLocalStorage("Héros Id", []);
+  const [heroesCollected, setHeroesCollected] = useLocalStorage("heroesId", []);
   const theToken = useMemo(() => ({ token, setToken }), [token]);
   const theHeroes = useMemo(
     () => ({ heroesCollected, setHeroesCollected }),

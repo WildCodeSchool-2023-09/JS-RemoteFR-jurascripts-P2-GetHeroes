@@ -4,8 +4,9 @@ import "./colector.scss";
 
 function Colector() {
   const { apidata, loading } = ApiHeroes();
-  const chunkSize = 40;
 
+  const chunkSize = 40;
+  const heroesId = localStorage.getItem("heroesId");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [chunkedData, setChunkedData] = useState([]);
 
@@ -23,17 +24,21 @@ function Colector() {
   }
   const totalPages = chunkedData.length;
   const nextSlide = () => {
+    document.getElementById("card-list-container").scrollTop = 0;
     setCurrentSlide((prevSlide) =>
       prevSlide < chunkedData.length - 1 ? prevSlide + 1 : prevSlide
     );
   };
 
   const previousSlide = () => {
+    document.getElementById("card-list-container").scrollTop = 0;
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : prevSlide));
   };
-
+  const isFoundHero = (hero) => {
+    return JSON.parse(heroesId).includes(hero.id);
+  };
   return (
-    <div className="card-list-container">
+    <div className="card-list-container" id="card-list-container">
       <div className="page-indicator">{`Page ${
         currentSlide + 1
       }/${totalPages}`}</div>
@@ -56,16 +61,20 @@ function Colector() {
       </div>
       <div className="card-list">
         {chunkedData[currentSlide] &&
-          chunkedData[currentSlide].map((hero) => (
-            <div key={hero.id} className="card">
-              <img
-                className="colector-picture"
-                src={hero.image.url}
-                alt={hero.name}
-              />
-              <h3 className="hero-name">{hero.name}</h3>
-            </div>
-          ))}
+          chunkedData[currentSlide].map((hero) => {
+            return isFoundHero(hero) ? (
+              <div key={hero.id} className="card">
+                <img
+                  className="colector-picture"
+                  src={hero.image.url}
+                  alt={hero.name}
+                />
+                <h3 className="hero-name">{hero.name}</h3>
+              </div>
+            ) : (
+              <div className="notFoundCard" />
+            );
+          })}
       </div>
     </div>
   );

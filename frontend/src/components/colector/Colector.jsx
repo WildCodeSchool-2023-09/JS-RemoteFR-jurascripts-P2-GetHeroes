@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ApiHeroes from "../../data/ApiHeroes";
 import "./colector.scss";
+import CardColector from "./CardColector";
 
 function Colector() {
   const { apidata, loading } = ApiHeroes();
@@ -34,9 +35,11 @@ function Colector() {
     document.getElementById("card-list-container").scrollTop = 0;
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : prevSlide));
   };
-  const isFoundHero = (hero) => {
-    return JSON.parse(heroesId).includes(hero.id);
+  const isFoundHero = () => {
+    // return JSON.parse(heroesId).includes(hero.id);
+    return JSON.parse(heroesId);
   };
+
   return (
     <div className="card-list-container" id="card-list-container">
       <div className="page-indicator">{`Page ${
@@ -62,15 +65,8 @@ function Colector() {
       <div className="card-list">
         {chunkedData[currentSlide] &&
           chunkedData[currentSlide].map((hero) => {
-            return isFoundHero(hero) ? (
-              <div key={hero.id} className="card">
-                <img
-                  className="colector-picture"
-                  src={hero.image.url}
-                  alt={hero.name}
-                />
-                <h3 className="hero-name">{hero.name}</h3>
-              </div>
+            return !isFoundHero(hero) ? (
+              <CardColector key={hero.id} hero={hero} />
             ) : (
               <div className="notFoundCard" />
             );

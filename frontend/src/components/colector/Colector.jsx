@@ -35,9 +35,11 @@ function Colector() {
     document.getElementById("card-list-container").scrollTop = 0;
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : prevSlide));
   };
-  const isFoundHero = () => {
-    // return JSON.parse(heroesId).includes(hero.id);
-    return JSON.parse(heroesId);
+  const isFoundHero = (hero) => {
+    if (JSON.parse(heroesId) === null) {
+      return JSON.parse(heroesId);
+    }
+    return JSON.parse(heroesId).includes(hero.id);
   };
 
   return (
@@ -65,7 +67,7 @@ function Colector() {
       <div className="card-list">
         {chunkedData[currentSlide] &&
           chunkedData[currentSlide].map((hero) => {
-            return !isFoundHero(hero) ? (
+            return isFoundHero(hero) ? (
               <CardColector key={hero.id} hero={hero} />
             ) : (
               <div className="notFoundCard" />

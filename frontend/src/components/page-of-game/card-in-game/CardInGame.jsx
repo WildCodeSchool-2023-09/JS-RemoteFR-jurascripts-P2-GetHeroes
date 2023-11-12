@@ -43,7 +43,7 @@ function CardInGame() {
           )}
         </section>
         <section className="contenairSolution">
-          <Solution rendomiserApi={currentHero} setGameState={setGameState} />
+          <Solution currentHero={currentHero} setGameState={setGameState} />
         </section>
       </section>
     );

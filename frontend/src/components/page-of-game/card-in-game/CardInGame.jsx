@@ -69,7 +69,11 @@ function CardInGame() {
   if (gameState === "win") {
     return (
       <section className="win">
-        <Reward clickRestart={clickRestart} currentHero={currentHero} />
+        <Reward
+          clickRestart={clickRestart}
+          currentHero={currentHero}
+          setGetToken={setGetToken}
+        />
       </section>
     );
   }
@@ -77,7 +81,7 @@ function CardInGame() {
   if (gameState === "lose") {
     return (
       <section className="lose">
-        <Lose clickRestart={clickRestart} />
+        <Lose clickRestart={clickRestart} setGetToken={setGetToken} />
       </section>
     );
   }

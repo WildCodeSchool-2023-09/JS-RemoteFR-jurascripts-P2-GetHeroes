@@ -40,7 +40,7 @@ function App() {
     <TokenPorcent.Provider value={perctTokens}>
       <TokenContext.Provider value={theToken}>
         <HeroesCollect.Provider value={theHeroes}>
-          <div className="App">
+          <div className={display ? "App" : "App filterApp"}>
             <header>
               <Token />
               <Newnav displayYes={displayyes} displayNo={displayno} />

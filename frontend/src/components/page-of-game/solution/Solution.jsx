@@ -4,7 +4,7 @@ import { useContext } from "react";
 import TokenContext from "../../../contexts/TokenContext";
 import HeroesCollect from "../../../contexts/HeroesCollect";
 
-function Solution({ rendomiserApi, setGameState, getToken }) {
+function Solution({ currentHero, setGameState, getToken }) {
   const { heroesCollected, setHeroesCollected } = useContext(HeroesCollect);
   const { setToken, token } = useContext(TokenContext);
 
@@ -12,10 +12,10 @@ function Solution({ rendomiserApi, setGameState, getToken }) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const heroValider = formData.get("valider");
-    if (heroValider.toLowerCase() === rendomiserApi.name.toLowerCase()) {
+    if (heroValider.toLowerCase() === currentHero.name.toLowerCase()) {
       setToken(token + getToken);
+      setHeroesCollected([...heroesCollected, currentHero.id]);
       setGameState("win");
-      setHeroesCollected([...heroesCollected, rendomiserApi[0].id]);
     } else {
       setGameState("lose");
     }
@@ -34,8 +34,9 @@ function Solution({ rendomiserApi, setGameState, getToken }) {
 }
 
 Solution.propTypes = {
-  rendomiserApi: PropTypes.shape({
+  currentHero: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
   setGameState: PropTypes.func.isRequired,
   getToken: PropTypes.number.isRequired,

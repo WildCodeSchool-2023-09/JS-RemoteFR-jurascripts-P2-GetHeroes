@@ -19,7 +19,7 @@ function CardInGame() {
 
   useEffect(() => {
     if (scrPercent >= 9) {
-      setGetToken(Math.max(getToken - 70, 0));
+      setGetToken(Math.max(getToken - 60, 0));
     }
   }, [scrPercent, setGetToken]);
 
@@ -57,7 +57,7 @@ function CardInGame() {
         </section>
         <section className="contenairSolution">
           <Solution
-            rendomiserApi={currentHero}
+            currentHero={currentHero}
             setGameState={setGameState}
             getToken={getToken}
           />
@@ -69,7 +69,7 @@ function CardInGame() {
   if (gameState === "win") {
     return (
       <section className="win">
-        <Reward clickRestart={clickRestart} rendomiserApi={currentHero} />
+        <Reward clickRestart={clickRestart} currentHero={currentHero} />
       </section>
     );
   }

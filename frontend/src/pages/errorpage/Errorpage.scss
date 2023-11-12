@@ -1,0 +1,28 @@
+@import "../../assets/_variables";
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-style: italic;
+    font-size: 1.035rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $textColor;
+    font-size: 1.5rem;
+  }
+
+  .nopage {
+    color: #1068b8;
+    font-size: 2.7rem;
+  }
+}

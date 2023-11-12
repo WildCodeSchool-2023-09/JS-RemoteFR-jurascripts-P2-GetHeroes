@@ -4,7 +4,7 @@ import { useContext } from "react";
 import TokenContext from "../../../contexts/TokenContext";
 import HeroesCollect from "../../../contexts/HeroesCollect";
 
-function Solution({ currentHero, setGameState }) {
+function Solution({ currentHero, setGameState, getToken }) {
   const { heroesCollected, setHeroesCollected } = useContext(HeroesCollect);
   const { setToken, token } = useContext(TokenContext);
 
@@ -13,11 +13,10 @@ function Solution({ currentHero, setGameState }) {
     const formData = new FormData(e.target);
     const heroValider = formData.get("valider");
     if (heroValider.toLowerCase() === currentHero.name.toLowerCase()) {
-      setToken(token + 150);
+      setToken(token + getToken);
       setHeroesCollected([...heroesCollected, currentHero.id]);
       setGameState("win");
     } else {
-      setToken(token - 10);
       setGameState("lose");
     }
   };
@@ -40,6 +39,7 @@ Solution.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
   setGameState: PropTypes.func.isRequired,
+  getToken: PropTypes.number.isRequired,
 };
 
 export default Solution;

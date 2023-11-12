@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./reward.scss";
 import omg from "../../assets/pictures/omg.png";
 
-function Reward({ currentHero, clickRestart }) {
+function Reward({ currentHero, clickRestart, setGetToken }) {
   return (
     <section>
       <div className="zoom-reward">
@@ -39,7 +39,14 @@ function Reward({ currentHero, clickRestart }) {
           Mon éditeur est {currentHero.biography.publisher}.
         </p>
       </div>
-      <button className="reward-restart" type="button" onClick={clickRestart}>
+      <button
+        className="reward-restart"
+        type="button"
+        onClick={() => {
+          clickRestart();
+          setGetToken(500);
+        }}
+      >
         Recommencer
       </button>
       <img className="omg" src={omg} alt="omg" />
@@ -66,6 +73,7 @@ Reward.propTypes = {
     }).isRequired,
   }).isRequired,
   clickRestart: PropTypes.func.isRequired,
+  setGetToken: PropTypes.func.isRequired,
 };
 
 export default Reward;

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "./reward.scss";
+import omg from "../../assets/pictures/omg.png";
 
 function Reward({ rendomiserApi, clickRestart }) {
   return (
@@ -43,6 +44,7 @@ function Reward({ rendomiserApi, clickRestart }) {
       <button className="reward-restart" type="button" onClick={clickRestart}>
         Recommencer
       </button>
+      <img className="omg" src={omg} alt="omg" />
     </section>
   );
 }

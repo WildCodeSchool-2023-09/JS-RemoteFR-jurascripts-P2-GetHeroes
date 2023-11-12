@@ -1,12 +1,21 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  useContext,
+} from "react";
 import PropTypes from "prop-types";
 import "./scratchcard.scss";
+import TokenPorcent from "../contexts/TokenPorcent";
 
 function ScratchCard({ width, height, image, brushSize }) {
   const canvasRef = useRef(null);
   const imageRef = useRef(null);
   const [isScratching, setIsScratching] = useState(false);
   const [scratchedPercent, setScratchedPercent] = useState(0);
+
+  const { setScrPercent } = useContext(TokenPorcent);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,13 +47,11 @@ function ScratchCard({ width, height, image, brushSize }) {
   };
 
   const handleTouchStart = (e) => {
-    e.preventDefault();
     setIsScratching(true);
     handleScratch(e);
   };
 
   const handleTouchMove = (e) => {
-    e.preventDefault();
     handleScratch(e);
   };
 
@@ -63,12 +70,15 @@ function ScratchCard({ width, height, image, brushSize }) {
 
     setScratchedPercent((scratchedPixels / totalPixels) * 100);
   }, [width, height]);
+
   const handleTouchEnd = () => {
     if (isScratching) {
       setIsScratching(false);
       calculateScratchedPercent();
     }
   };
+
+  setScrPercent(scratchedPercent.toFixed(2));
 
   return (
     <div>
@@ -86,7 +96,6 @@ function ScratchCard({ width, height, image, brushSize }) {
         alt="hidden"
         style={{ display: "none" }}
       />
-      <p>{scratchedPercent.toFixed(2)}% scratched</p>
     </div>
   );
 }

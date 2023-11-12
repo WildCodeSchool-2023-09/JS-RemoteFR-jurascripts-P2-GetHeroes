@@ -9,12 +9,24 @@
     img {
       position: absolute;
       z-index: 1;
-      bottom: 218px;
+      bottom: 210px;
       border: $borderBlue;
       box-shadow: 0px 0px 4px 4px black;
       width: 14rem;
       height: 18rem;
     }
+  }
+
+  .gettoken {
+    margin-top: 3px;
+    font-size: 0.8rem;
+
+    color: $textColor;
+    font-weight: 600;
+    padding: 2px 7px;
+    background: $backgroundText;
+    border: $borderBlue;
+    border-radius: 20px;
   }
 }
 .lose {

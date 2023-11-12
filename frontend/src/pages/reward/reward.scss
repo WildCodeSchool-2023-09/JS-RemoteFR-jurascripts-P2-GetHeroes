@@ -79,3 +79,62 @@
     }
   }
 }
+.omg {
+  position: absolute;
+  width: 200px;
+  bottom: 40%;
+  right: 14%;
+  animation: wow 4s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s 1 reverse forwards;
+  @keyframes wow {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+
+    20% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    37% {
+      animation-timing-function: ease-in;
+      transform: translateY(-65px);
+    }
+
+    54% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+
+    63% {
+      animation-timing-function: ease-in;
+      transform: translateY(-28px);
+    }
+
+    72% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+
+    77% {
+      animation-timing-function: ease-in;
+      transform: translateY(-8px);
+    }
+
+    75% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+    85% {
+      transform: rotate(0);
+      transform-origin: left;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      transform-origin: left;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./reward.scss";
 import omg from "../../assets/pictures/omg.png";
+import AgainSong from "../../util/AgainSong";
 
 function Reward({ currentHero, clickRestart, setGetToken }) {
   return (
@@ -45,6 +46,7 @@ function Reward({ currentHero, clickRestart, setGetToken }) {
         onClick={() => {
           clickRestart();
           setGetToken(500);
+          AgainSong();
         }}
       >
         Recommencer

@@ -12,11 +12,16 @@ import Newnav from "./components/menu_burger/Newnav";
 import TokenContext from "./contexts/TokenContext";
 import HeroesCollect from "./contexts/HeroesCollect";
 import TokenPorcent from "./contexts/TokenPorcent";
+import PlaySong from "./util/PlaySong";
+import AudioPlayer from "./util/AudioPlay";
+import fisrtSong from "./assets/songs/atmosphere_games.wav";
+import secondSong from "./assets/songs/atmosphere_games_2.wav";
 
 function App() {
   const [token, setToken] = useLocalStorage("token", 0);
   const [display, setDisplay] = useSessionStorage("ButtonPlay", true);
   const [heroesCollected, setHeroesCollected] = useLocalStorage("heroesId", []);
+  const playlist = [fisrtSong, secondSong];
   const theToken = useMemo(() => ({ token, setToken }), [token]);
   const theHeroes = useMemo(
     () => ({ heroesCollected, setHeroesCollected }),
@@ -46,8 +51,15 @@ function App() {
               <Newnav displayYes={displayyes} displayNo={displayno} />
             </header>
             <main>
+              <AudioPlayer playlist={playlist} autoPlay />
               <Title />
-              <Link to="/game" onClick={displayno}>
+              <Link
+                to="/game"
+                onClick={() => {
+                  displayno();
+                  PlaySong();
+                }}
+              >
                 {display === true ? (
                   <ButtonPlay />
                 ) : (

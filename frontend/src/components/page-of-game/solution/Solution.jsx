@@ -4,6 +4,9 @@ import { useContext } from "react";
 import TokenContext from "../../../contexts/TokenContext";
 import HeroesCollect from "../../../contexts/HeroesCollect";
 
+import ValidationTrueSong from "../../../util/ValidationTrueSong";
+import ValidationFalseSong from "../../../util/ValidationFalseSong";
+
 function Solution({ currentHero, setGameState, getToken }) {
   const { heroesCollected, setHeroesCollected } = useContext(HeroesCollect);
   const { setToken, token } = useContext(TokenContext);
@@ -13,10 +16,12 @@ function Solution({ currentHero, setGameState, getToken }) {
     const formData = new FormData(e.target);
     const heroValider = formData.get("valider");
     if (heroValider.toLowerCase() === currentHero.name.toLowerCase()) {
+      ValidationTrueSong();
       setToken(token + getToken);
       setHeroesCollected([...heroesCollected, currentHero.id]);
       setGameState("win");
     } else {
+      ValidationFalseSong();
       setGameState("lose");
     }
   };

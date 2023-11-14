@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import pow from "../../../assets/pictures/pow.png";
 import "./lose.scss";
+import AgainSong from "../../../util/AgainSong";
 
 function Lose({ clickRestart, setGetToken }) {
   return (
@@ -13,6 +14,7 @@ function Lose({ clickRestart, setGetToken }) {
         onClick={() => {
           clickRestart();
           setGetToken(500);
+          AgainSong();
         }}
       >
         Recommencer

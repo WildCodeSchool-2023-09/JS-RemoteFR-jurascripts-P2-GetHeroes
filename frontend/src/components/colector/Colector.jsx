@@ -12,7 +12,6 @@ function Colector() {
   const [chunkedData, setChunkedData] = useState([]);
 
   useEffect(() => {
-    // Diviser les cartes en sous-tableaux de 10 cartes chacun
     const newData = [];
     for (let i = 0; i < apidata.length; i += chunkSize) {
       newData.push(apidata.slice(i, i + chunkSize));
@@ -44,24 +43,23 @@ function Colector() {
 
   return (
     <div className="card-list-container" id="card-list-container">
-      <div className="page-indicator">{`Page ${
-        currentSlide + 1
-      }/${totalPages}`}</div>
       <div className="slider-navigation">
         <button
           type="button"
           onClick={previousSlide}
           disabled={currentSlide === 0}
         >
-          Précédent
+          ←
         </button>
-
+        <div className="page-indicator">{`Page ${
+          currentSlide + 1
+        }/${totalPages}`}</div>
         <button
           type="button"
           onClick={nextSlide}
           disabled={currentSlide === chunkedData.length - 1}
         >
-          Suivant
+          →
         </button>
       </div>
       <div className="card-list">

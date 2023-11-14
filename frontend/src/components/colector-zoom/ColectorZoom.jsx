@@ -1,3 +1,4 @@
+import { Link, useParams } from "react-router-dom";
 import ApiHeroes from "../../data/ApiHeroes";
 import "./colectorzoom.scss";
 import SVG from "../../assets/pictures/delete.svg";
@@ -7,41 +8,45 @@ function ColectorZoom() {
   if (loading) {
     return <div>Chargement en cours...</div>;
   }
+  const { id } = useParams();
+  const result = apidata.filter((herocard) => herocard.id === id);
   return (
     <section className="zoom-card">
-      <img className="return-zoom" src={SVG} alt="Play" />
+      <Link to="/colector">
+        <img className="return-zoom" src={SVG} alt="Play" />
+      </Link>
       <p className="number-card">237/481</p>
       <img
         className="img-hero-zoom"
-        src={apidata[236].image.url}
-        alt={apidata[236].name}
+        src={result[0].image.url}
+        alt={result[0].name}
         height="294"
         width="230"
       />
-      <p className="height-zoom desc">{apidata[236].appearance.height[1]}</p>
+      <p className="height-zoom desc">{result[0].appearance.height[1]}</p>
       <p className="weight-zoom desc">
-        {apidata[236].appearance.weight[1] === "0 kg"
+        {result[0].appearance.weight[1] === "0 kg"
           ? "--- kg"
-          : apidata[236].appearance.weight[1]}
+          : result[0].appearance.weight[1]}
       </p>
-      <h3 className="big-name-zoom">{apidata[236].name}</h3>
+      <h3 className="big-name-zoom">{result[0].name}</h3>
       <p className="name-zoom">
-        Mon nom est {apidata[236].name}
-        {apidata[236].biography.aliases[0] === "-"
+        Mon nom est {result[0].name}
+        {result[0].biography.aliases[0] === "-"
           ? "."
-          : `alias ${apidata[236].biography.aliases[0]}.`}
+          : `alias ${result[0].biography.aliases[0]}.`}
       </p>
       <p className="full-name-zoom">
-        Je suis {apidata[236].biography["full-name"]}.
+        Je suis {result[0].biography["full-name"]}.
       </p>
       <p className="race-zoom">
-        Je suis un {apidata[236].appearance.race}
-        {apidata[236].biography["place-of-birth"] === "-"
+        Je suis un {result[0].appearance.race}
+        {result[0].biography["place-of-birth"] === "-"
           ? "."
-          : `né à ${apidata[236].biography["place-of-birth"]}.`}
+          : `né à ${result[0].biography["place-of-birth"]}.`}
       </p>
       <p className="publisher-zoom">
-        Mon éditeur est {apidata[236].biography.publisher}.
+        Mon éditeur est {result[0].biography.publisher}.
       </p>
     </section>
   );

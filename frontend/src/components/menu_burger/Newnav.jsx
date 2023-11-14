@@ -17,7 +17,6 @@ function Newnav({ displayYes, displayNo }) {
       {isClicked && (
         <ul className="navlinks">
           <li className="nav_items">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <Link
               to="/"
               onClick={() => {

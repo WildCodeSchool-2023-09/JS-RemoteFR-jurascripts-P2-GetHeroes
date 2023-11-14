@@ -14,6 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Errorpage />,
     children: [
       {
         path: "/game",
@@ -34,10 +35,6 @@ const router = createBrowserRouter([
       {
         path: "/reward",
         element: <Reward />,
-      },
-      {
-        path: "*",
-        element: <Errorpage />,
       },
     ],
   },

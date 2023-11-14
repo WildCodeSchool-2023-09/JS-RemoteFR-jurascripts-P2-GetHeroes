@@ -36,10 +36,6 @@ const router = createBrowserRouter([
         path: "/reward",
         element: <Reward />,
       },
-      // {
-      //   path: "*",
-      //   element: <Errorpage />,
-      // },
     ],
   },
 ]);

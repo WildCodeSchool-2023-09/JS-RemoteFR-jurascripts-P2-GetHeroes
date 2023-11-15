@@ -7,7 +7,6 @@ import Instruction from "./pages/instruction/Instruction";
 import InGame from "./pages/in-game/InGame";
 import Colector from "./components/colector/Colector";
 import ZoomCard from "./pages/zoom_colector/ZoomColector";
-import Reward from "./pages/reward/Reward";
 import Errorpage from "./pages/errorpage/Errorpage";
 
 const router = createBrowserRouter([
@@ -29,12 +28,12 @@ const router = createBrowserRouter([
         element: <Colector />,
       },
       {
-        path: "/zoom_colector",
+        path: "/zoom_colector/:id",
         element: <ZoomCard />,
       },
       {
-        path: "/reward",
-        element: <Reward />,
+        path: "*",
+        element: <Errorpage />,
       },
     ],
   },

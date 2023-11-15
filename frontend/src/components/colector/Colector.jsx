@@ -3,6 +3,7 @@ import ApiHeroes from "../../data/ApiHeroes";
 import "./colector.scss";
 import CardColector from "./CardColector";
 import NotFoundCard from "./NotFoundCard";
+import PagesSong from "../../util/PagesSong";
 
 function Colector() {
   const { apidata, loading } = ApiHeroes();
@@ -32,11 +33,13 @@ function Colector() {
     setCurrentSlide((prevSlide) =>
       prevSlide < chunkedData.length - 1 ? prevSlide + 1 : prevSlide
     );
+    PagesSong();
   };
 
   const previousSlide = () => {
     document.getElementById("card-list-container").scrollTop = 0;
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : prevSlide));
+    PagesSong();
   };
 
   const isFoundHero = (hero) => {
@@ -49,7 +52,7 @@ function Colector() {
   const handleBuy = (hero) => {
     const price = 2000;
     if (token >= price) {
-      const heroes = JSON.parse(heroesId);
+      const heroes = JSON.parse(heroesId) || [];
       localStorage.setItem("heroesId", JSON.stringify([...heroes, hero.id]));
       localStorage.setItem("token", token - price);
       window.location.reload();

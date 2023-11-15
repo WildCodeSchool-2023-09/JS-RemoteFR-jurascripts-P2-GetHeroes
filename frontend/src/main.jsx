@@ -30,7 +30,6 @@ const router = createBrowserRouter([
         path: "/zoom_colector/:id",
         element: <ZoomCard />,
       },
-
       {
         path: "*",
         element: <Errorpage />,

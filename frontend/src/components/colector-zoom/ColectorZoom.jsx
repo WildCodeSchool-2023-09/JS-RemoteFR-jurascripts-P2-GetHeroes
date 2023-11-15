@@ -19,7 +19,7 @@ function ColectorZoom() {
         <img className="return-zoom" src={SVG} alt="Play" />
       </Link>
       <p className="number-card">
-        {heroIndex}/{apidata.length}
+        {heroIndex + 1}/{apidata.length}
       </p>
       <img
         className="img-hero-zoom"

@@ -12,5 +12,10 @@
     background: $backgroundText;
     border: $borderBlue;
     border-radius: 20px;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 1.2rem;
+      margin: 0;
+    }
   }
 }

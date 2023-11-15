@@ -2,12 +2,13 @@
 
 .navbar {
   display: inline-block;
-  // background: $backgroundText;
   @media screen and (min-width: 767px) {
     background: none;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+    width: 30%;
+    font-size: 1.078rem;
   }
   .navlinks {
     display: flex;

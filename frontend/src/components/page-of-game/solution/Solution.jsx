@@ -28,7 +28,7 @@ function Solution({ currentHero, setGameState, getToken }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        placeholder="Quel est ce héro?"
+        placeholder="Qui est ce héros ?"
         type="text"
         className="solutionText"
         name="valider"

@@ -25,7 +25,7 @@ function ApiHeroes() {
         setError(err);
         setLoading(false);
       });
-  }, []);
+  }, [apidata]);
 
   return { apidata, loading, error };
 }

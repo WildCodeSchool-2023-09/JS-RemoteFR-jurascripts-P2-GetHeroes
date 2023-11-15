@@ -4,6 +4,7 @@ import "./colector.scss";
 import CardColector from "./CardColector";
 import NotFoundCard from "./NotFoundCard";
 import PagesSong from "../../util/PagesSong";
+import BuySong from "../../util/BuySong";
 
 function Colector() {
   const { apidata, loading } = ApiHeroes();
@@ -55,7 +56,7 @@ function Colector() {
       const heroes = JSON.parse(heroesId) || [];
       localStorage.setItem("heroesId", JSON.stringify([...heroes, hero.id]));
       localStorage.setItem("token", token - price);
-      window.location.reload();
+      BuySong();
     } else {
       // eslint-disable-next-line no-alert
       alert("Vous n'avez pas assez de tokens pour acheter cette carte");

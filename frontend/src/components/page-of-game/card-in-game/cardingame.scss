@@ -15,16 +15,25 @@
       width: 14rem;
       height: 18rem;
       @media screen and (min-width: 315px) {
-        top: 192px;
+        top: 169px;
+      }
+      @media screen and (min-width: 319px) {
+        top: 85px;
+      }
+      @media screen and (min-width: 359px) {
+        top: 169px;
       }
       @media screen and (min-width: 374px) {
-        top: 157px;
+        top: 131px;
       }
-      @media screen and (min-width: 385px) {
-        top: 246px;
+      @media screen and (min-width: 389px) {
+        top: 222px;
       }
-      @media screen and (min-width: 410px) {
-        top: 278px;
+      @media screen and (min-width: 411px) {
+        top: 256px;
+      }
+      @media screen and (min-width: 413px) {
+        top: 251px;
       }
       @media screen and (min-width: 535px) {
         top: 184px;

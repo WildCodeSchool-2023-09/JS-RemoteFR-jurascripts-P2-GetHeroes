@@ -35,7 +35,7 @@ function CardInGame() {
   if (!currentHero) {
     setCurrentHero(Rendomiser(apidata).slice(0, 1)[0]);
   }
-
+  document.documentElement.style.overflow = "hidden";
   if (gameState === "game") {
     return (
       <section className="games-card-container">
@@ -48,7 +48,14 @@ function CardInGame() {
           />
           {currentHero && (
             <div>
-              <img src={currentHero.image.url} alt={currentHero.name} />
+              <img
+                className="heroG"
+                src={currentHero.image.url}
+                alt={currentHero.name}
+                onError={() => {
+                  clickRestart();
+                }}
+              />
             </div>
           )}
         </section>

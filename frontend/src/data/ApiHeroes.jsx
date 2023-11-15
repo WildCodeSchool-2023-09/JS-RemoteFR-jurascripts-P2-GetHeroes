@@ -20,20 +20,6 @@ function ApiHeroes() {
       .then((data) => {
         setApiData(data.results);
         setLoading(false);
-        // Filtrer les éléments avec des images valides
-        // const filteredData = [];
-        // const imageCheckPromises = data.results.map(async (element) => {
-        // const imageResponse = await fetch(element.image.url, {
-        //   method: "HEAD",
-        // });
-        // if (imageResponse.status !== 404) {
-        //   filteredData.push(element);
-        // }
-        // });
-        // Promise.all(imageCheckPromises).then(() => {
-        //   setApiData(filteredData);
-        //   setLoading(false);
-        // });
       })
       .catch((err) => {
         setError(err);

@@ -6,21 +6,46 @@
   align-items: center;
 
   .contenairScratcard {
-    img {
+    .heroG {
       position: absolute;
       z-index: 1;
-      bottom: 210px;
+      top: calc(100% - 503px);
       border: $borderBlue;
       box-shadow: 0px 0px 4px 4px black;
       width: 14rem;
       height: 18rem;
+      @media screen and (min-width: 315px) {
+        top: 192px;
+      }
+      @media screen and (min-width: 374px) {
+        top: 157px;
+      }
+      @media screen and (min-width: 385px) {
+        top: 246px;
+      }
+      @media screen and (min-width: 410px) {
+        top: 278px;
+      }
+      @media screen and (min-width: 535px) {
+        top: 184px;
+      }
+      @media screen and (min-width: 600px) {
+        top: 57px;
+        width: 13em;
+        height: 17rem;
+      }
+      @media screen and (min-width: 758px) {
+        top: 335px;
+      }
+      @media screen and (min-width: 807px) {
+        top: 414px;
+      }
     }
   }
 
   .gettoken {
     margin-top: 3px;
     font-size: 0.8rem;
-
     color: $textColor;
     font-weight: 600;
     padding: 2px 7px;

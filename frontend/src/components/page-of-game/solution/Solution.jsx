@@ -33,7 +33,9 @@ function Solution({ currentHero, setGameState, getToken }) {
         className="solutionText"
         name="valider"
       />
-      <button type="submit">Valider</button>
+      <button className="button-solution" type="submit">
+        Valider
+      </button>
     </form>
   );
 }

@@ -15,21 +15,12 @@ form {
     color: $textColor;
     border-radius: 28px;
   }
-  button {
+  .button-solution {
     font-size: 15px;
     padding: 5px 15px;
     border: $borderBlue;
     background-color: $backgroundText;
     color: $textColor;
     border-radius: 28px;
-    @media screen and (min-width: 600px) {
-      font-size: 15px;
-      padding: 5px 15px;
-      border: 3px solid #1068b8;
-      background-color: rgba(82, 78, 78, 0.9);
-      color: #eed425;
-      border-radius: 28px;
-      margin-bottom: 64px;
-    }
   }
 }

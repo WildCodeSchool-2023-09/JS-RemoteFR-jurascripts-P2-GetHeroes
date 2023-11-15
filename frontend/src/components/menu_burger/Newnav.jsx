@@ -25,7 +25,7 @@ function Newnav({ displayYes, displayNo }) {
               }}
               className="nav_link"
             >
-              Home
+              Accueil
             </Link>
           </li>
           <li className="nav_items">

@@ -1,6 +1,12 @@
 @import "../../assets/variables.scss";
 
 .container-instruction {
+  @media screen and (min-width: 511px) {
+    width: 77%;
+  }
+  @media screen and (min-width: 329px) {
+    width: 70%;
+  }
   color: #111111;
   background-color: #c49d48f5;
   border: 3px solid black;

@@ -35,7 +35,7 @@ function CardInGame() {
   if (!currentHero) {
     setCurrentHero(Rendomiser(apidata).slice(0, 1)[0]);
   }
-
+  document.documentElement.style.overflow = "hidden";
   if (gameState === "game") {
     return (
       <section className="games-card-container">

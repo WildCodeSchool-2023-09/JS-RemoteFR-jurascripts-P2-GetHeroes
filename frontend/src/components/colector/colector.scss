@@ -37,9 +37,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-button {
-  border: $borderBlue;
-}
+
 .slider-navigation button:disabled {
   background-color: #1067b881;
   cursor: not-allowed;
@@ -72,7 +70,7 @@ button {
   margin: 10px;
   padding: 10px;
   text-align: center;
-  background-color: black;
+  background-color: $backgroundText;
   border-radius: 0.3rem;
   position: relative;
 }
@@ -83,9 +81,12 @@ button {
 }
 
 .hero-name {
-  font-size: 1.2em;
-  margin: 5px 0;
+  font-size: 0.7rem;
+  margin: -5px 0;
   color: $textColor;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .notFoundCard {
   width: 150px;
@@ -98,22 +99,42 @@ button {
   background-position: center;
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .buyCardButton {
-  border: solid 1px red;
+  background-color: #eed32579;
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: absolute;
+  top: 3%;
+  right: 20%;
+  display: flex;
+  flex-direction: column;
 }
-
+.buyCardButton svg {
+  width: 20px;
+  height: 15px;
+  margin-right: 3px;
+}
 .hero-name-overlay {
   position: absolute;
-  bottom: 5px; /* Ajustez cette valeur en fonction de la distance que vous souhaitez par rapport au bas de la carte */
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   color: $textColor;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-align: center;
-  white-space: normal; /* Permettre le saut à la ligne */
+  white-space: normal;
+  background-color: #252424a1;
+  border-radius: 8px;
 }
 @media screen and (max-width: 980px) {
   .card-list-container {
@@ -130,9 +151,6 @@ button {
   .card,
   .notFoundCard {
     width: 100px;
-  }
-  .hero-name {
-    font-size: 0.5rem;
   }
 }
 
@@ -153,8 +171,5 @@ button {
   .card,
   .notFoundCard {
     width: 50px;
-  }
-  .hero-name {
-    font-size: 0.5rem;
   }
 }

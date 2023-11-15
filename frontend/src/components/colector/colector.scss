@@ -136,40 +136,165 @@
   background-color: #252424a1;
   border-radius: 8px;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 718px) {
+  .big-title {
+    margin-top: -3rem;
+  }
   .card-list-container {
-    height: 100%;
-
     padding: 10px;
     width: 80%;
+    height: 360px;
+    margin-top: -1rem;
+  }
+  .hero-name-overlay {
+    font-size: 1rem;
   }
   .card-list {
     display: flex;
-    flex-direction: column 1fr 1fr;
+    flex-direction: column 1fr 1fr 1fr 1fr;
   }
 
   .card,
   .notFoundCard {
     width: 100px;
+    height: 140px;
+  }
+  .buyCardButton {
+    margin-right: 15px;
+  }
+  .hero-name {
+    margin-top: -5px;
+  }
+  .colector-picture {
+    max-height: 95%;
   }
 }
-
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 430px) {
   .card-list-container {
-    position: relative;
-    overflow: auto;
     padding: 10px;
-    height: 350px;
-    margin-bottom: 50px;
+    width: 80%;
+    height: 650px;
+    margin-top: -1rem;
+  }
+  .hero-name-overlay {
+    font-size: 1rem;
   }
   .card-list {
     display: flex;
     flex-direction: column 1fr 1fr;
-    height: 80%;
-    margin-bottom: 10rem;
+    height: 100%;
+  }
+
+  .card,
+  .notFoundCard {
+    width: 100px;
+    height: 140px;
+  }
+  .buyCardButton {
+    margin-right: 15px;
+  }
+  .hero-name {
+    margin-top: -5px;
+  }
+  .colector-picture {
+    max-height: 95%;
+  }
+}
+@media screen and (max-width: 361px) {
+  .card-list-container {
+    padding: 10px;
+    width: 80%;
+    height: 530px;
+    margin-bottom: 2rem;
+  }
+  .slider-navigation {
+    position: fixed;
+    bottom: 2.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+
+  .slider-navigation button {
+    background-color: #00000099;
+    border: solid 2px $borderBlue;
+    color: $textColor;
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .slider-navigation button:disabled {
+    background-color: #1067b881;
+    cursor: not-allowed;
+  }
+
+  .slider-navigation button:not(:disabled):hover {
+    background-color: $borderBlue;
+  }
+
+  .page-indicator {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    color: white;
+    z-index: 1;
+    font-weight: bold;
+    color: #eed425;
+    background-color: #2c2c2c9c;
+    border-radius: 0.3rem;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 349px) {
+  .card-list {
+    display: flex;
+    flex-direction: column 1fr 1fr;
   }
   .card,
   .notFoundCard {
-    width: 50px;
+    width: 55px;
+    height: 90px;
+  }
+}
+@media screen and (max-width: 281px) {
+  .big-title {
+    margin-top: -3rem;
+  }
+  .slider-navigation {
+    bottom: 5rem;
+  }
+  .card-list-container {
+    position: relative;
+    overflow: auto;
+    padding: 10px;
+    height: 380px;
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column 1fr 1fr;
+  }
+  .card,
+  .notFoundCard {
+    width: 60px;
+    height: 90px;
+  }
+
+  .colector-picture {
+    max-width: 100%;
+    height: auto;
+  }
+  .hero-name-overlay {
+    font-size: 0.7rem;
   }
 }

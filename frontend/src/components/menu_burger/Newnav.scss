@@ -1,16 +1,35 @@
 @import "../../assets/variables";
 
+header {
+  @media screen and (min-width: 767px) {
+    height: 48px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+}
+
 .navbar {
   display: inline-block;
   background: $backgroundText;
   @media screen and (min-width: 767px) {
     background: none;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
   }
   .navlinks {
     display: flex;
     margin: 0;
     padding: 0;
     list-style-type: none;
+    @media screen and (min-width: 767px) {
+      display: grid;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 14%;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     @media screen and (max-width: 767px) {
       flex-direction: column;
@@ -37,7 +56,8 @@
     }
   }
   ul {
-    background: white;
+    background: transparent;
+
     a {
       text-decoration: none;
       color: $textColor;

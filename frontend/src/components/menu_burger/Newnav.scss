@@ -2,16 +2,31 @@
 
 .navbar {
   display: inline-block;
-  background: $backgroundText;
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 767px) {
     background: none;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 30%;
+    font-size: 1.078rem;
   }
   .navlinks {
     display: flex;
     margin: 0;
     padding: 0;
     list-style-type: none;
+
     @media screen and (max-width: 767px) {
+      justify-content: center;
+      padding: 4px 20px;
+      position: relative;
+      top: -2px;
+      right: 5px;
+      width: 350px;
+      background: transparent;
+      align-items: center;
+    }
+    @media screen and (max-width: 700px) {
       flex-direction: column;
       justify-content: center;
       height: 100px;
@@ -25,18 +40,19 @@
       align-items: center;
       border-radius: 8px;
       border: $borderBlue;
+      font-size: 0.9rem;
     }
     .nav_link {
       padding: 0 0.3rem;
       @media screen and (max-width: 767px) {
         display: block;
         padding: 5px;
-        font-size: 0.9em;
       }
     }
   }
   ul {
-    background: white;
+    background: transparent;
+
     a {
       text-decoration: none;
       color: $textColor;
@@ -50,7 +66,16 @@
   .menu_burger {
     width: 23px;
     height: 23px;
+    color: #eed425;
+    position: absolute;
+    top: 6px;
+    right: 9px;
+    border: 3px solid #1068b8;
+    border-radius: 8px;
     @media screen and (max-width: 767px) {
+      background: rgba(82, 78, 78, 0.9);
+      border: 3px solid #1068b8;
+      border-radius: 8px;
       color: $textColor;
       background: $backgroundText;
       border: $borderBlue;

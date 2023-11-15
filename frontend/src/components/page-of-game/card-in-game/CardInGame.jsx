@@ -48,7 +48,14 @@ function CardInGame() {
           />
           {currentHero && (
             <div>
-              <img src={currentHero.image.url} alt={currentHero.name} />
+              <img
+                className="heroG"
+                src={currentHero.image.url}
+                alt={currentHero.name}
+                onError={() => {
+                  clickRestart();
+                }}
+              />
             </div>
           )}
         </section>

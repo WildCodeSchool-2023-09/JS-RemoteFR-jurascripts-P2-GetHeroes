@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ApiHeroes from "../../data/ApiHeroes";
 import "./colector.scss";
 import CardColector from "./CardColector";
 import NotFoundCard from "./NotFoundCard";
 import PagesSong from "../../util/PagesSong";
+import BuySong from "../../util/BuySong";
+import TokenContext from "../../contexts/TokenContext";
 
 function Colector() {
   const { apidata, loading } = ApiHeroes();
-  const token = localStorage.getItem("token");
+  const { setToken, token } = useContext(TokenContext);
 
   const chunkSize = 40;
   const heroesId = localStorage.getItem("heroesId");
@@ -54,8 +56,8 @@ function Colector() {
     if (token >= price) {
       const heroes = JSON.parse(heroesId) || [];
       localStorage.setItem("heroesId", JSON.stringify([...heroes, hero.id]));
-      localStorage.setItem("token", token - price);
-      window.location.reload();
+      setToken(token - price);
+      BuySong();
     } else {
       // eslint-disable-next-line no-alert
       alert("Vous n'avez pas assez de tokens pour acheter cette carte");

@@ -49,7 +49,7 @@ function Reward({ currentHero, clickRestart, setGetToken }) {
           AgainSong();
         }}
       >
-        Recommencer
+        Continuer
       </button>
       <img className="omg" src={omg} alt="omg" />
     </section>

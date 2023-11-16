@@ -19,6 +19,12 @@
     @media screen and (max-width: 767px) {
       display: none;
     }
+    @media screen and (min-width: 716px) {
+      display: block;
+      width: 11%;
+      position: absolute;
+      bottom: -21px;
+    }
   }
 }
 .footer {
